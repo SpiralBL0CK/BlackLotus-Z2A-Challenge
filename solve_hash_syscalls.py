@@ -10,8 +10,28 @@ def some_hash_0x1003F(x):
             if(x[i]):
                 rez = rez * 0x1003f + ord(x[i])
                 if len(hex(rez)) > 8:
-                    rez = (rez << 8)
-            print(hex(rez))
+                    rez = ((rez)) & 0xffffffff
+                #print(hex(rez))
+    return rez
+
+def subs_box(a,b):
+    """
+        a = variabila
+        b = constant 46 
+    """
+    r10d = 0 
+    r9d  = r10d
+    if(a):
+        r8d = r10d
+        for i in a:
+            if i == '.':
+                break
+            else:
+                r9d +=1
+                r8d = r9d
+                eax=a[r9d]
+    return (a[0:r9d])
+
 def ascii_range_decode2_suta_la_suta(requested_hash,x):
     """
         x = flink from previous function
@@ -31,8 +51,6 @@ def ascii_range_decode2_suta_la_suta(requested_hash,x):
         for i in range(0,len(rax)):
             if((ord(r8d[i])-0x41)<0x19):
                 tmp += str(ord(r8d[i]) + 32)
-            #print(r8d)
-        #print(tmp)
         eax = len(tmp)
     return eax
 
@@ -60,15 +78,22 @@ def iterate_over_module_name_and_hash(x):
         flink = current_modules[i+1]
         if(flink):
             v10 = ascii_range_decode2_suta_la_suta(x,flink)
+            #print(v10)
             rcx = current_modules[i]
-            #v8 = some_hash_0x1003F(rcx)
-
+            v8 = some_hash_0x1003F(rcx) == x
+            edx = 0x2e
+            module_name = subs_box(rcx,46)
+            #print(module_name)
+            if(some_hash_0x1003F(module_name) == x or v8):
+                v2 = current_modules[i]
+                return v2
+    
 
 
 def check_inmemory_ldr(y,x):
     r14 = x
     edx = 0
-    iterate_over_module_name_and_hash(0x0000000D22E2014)  
+    print(iterate_over_module_name_and_hash(0x0000000D22E2014))
 
 def syscall_solve_hash(x):
         esi = x
@@ -79,6 +104,6 @@ def syscall_solve_hash(x):
 
 
 if __name__ == "__main__":
-    print("aici")
-    some_hash_0x1003F("d68f668b4240f9518e4f80499d93d8c5a1eddece0771658c33ae916cc54f5a66.exe")
-    #syscall_solve_hash(0x000000002ED76231)
+    #print("aici")
+    #some_hash_0x1003F("d68f668b4240f9518e4f80499d93d8c5a1eddece0771658c33ae916cc54f5a66.exe")
+    syscall_solve_hash(0x000000002ED76231)
