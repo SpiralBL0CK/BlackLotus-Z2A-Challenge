@@ -131,7 +131,7 @@ def check_inmemory_ldr(y,x):
                 eax = hex(eax)[2:8]
                 eax = int(eax,base=16)
                 eax = REV(eax) >> 8
-                print(hex(eax))
+                #print(hex(eax))
                 #print(hexdump(binar))
                 eax = binar[eax:]
                 r12d = eax[0x1c:0x1c+4]
@@ -162,9 +162,23 @@ def check_inmemory_ldr(y,x):
                 ebp = REV(ebp) >> 8
 
                 r13d = binar[r13d:]                
-                print(hexdump(r13d))
-                for i in range(ebp):
-                    v11 = 
+                #print(hexdump(r15d))
+                eax = r15d
+                ebp = ebp >> 8
+                for i in range(ebp-1,0,-1):
+                    eax = i
+                    ecx = r15d[(eax*4):(eax*4+4)]
+                    ecx = int.from_bytes(ecx)
+                    ecx = hex(ecx)[2:8]
+                    ecx = int(ecx,base=16)
+                    ecx = REV(ecx) >> 8
+                    ebp = i
+                    tmp = ecx
+                    ecx = binar[ecx:tmp+4]
+                    print(hexdump(ecx))
+                    if(ecx == b'wZ'):
+
+
 
 def syscall_solve_hash(x):
         esi = x
