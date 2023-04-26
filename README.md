@@ -16,4 +16,5 @@ We imediatly notice the use of syscalls, whhich it's a known method to make the 
 For those who are not familiar with syscall's in windows here is a cool video made by oalabs(https://www.youtube.com/watch?v=Uba3SQH2jNE). Please watch it cause i did too and it helped me a lot to understand what happens in this function
 
 If we inspect the "pseudo-code" resolved by ida we see it looks like this 
+
 ![Capture4](https://user-images.githubusercontent.com/25670930/234440494-7221a172-ad83-4325-8b4b-3110547e807c.PNG)
