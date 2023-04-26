@@ -42,6 +42,12 @@ And this is how the anti-debug "pseudo-function" looks like
 
 Pretty simple if you aks me 
 
+Next we have check_inmemory_ldr function which looks like this 
+
+![1](https://user-images.githubusercontent.com/25670930/234482308-767c0940-36b5-458d-9012-a73ffbb7a687.PNG)
+
+![2](https://user-images.githubusercontent.com/25670930/234482321-9239fab6-a526-401f-addd-b5cbf5af4868.PNG)
+
 
 =============================================================================
 
