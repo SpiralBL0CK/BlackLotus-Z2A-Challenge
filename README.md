@@ -19,3 +19,9 @@ For those who are not familiar with syscall's in windows here is a cool video ma
 If we inspect the "pseudo-code" resolved by ida we see it looks like this 
 
 ![Capture4](https://user-images.githubusercontent.com/25670930/234440494-7221a172-ad83-4325-8b4b-3110547e807c.PNG)
+
+If we inspect statically solve_hash it looks like this
+
+![1](https://user-images.githubusercontent.com/25670930/234447160-aa81b9e3-b7b8-412e-b12e-970d80805a06.PNG)
+
+![2](https://user-images.githubusercontent.com/25670930/234447174-9738ab7b-baca-41e6-bab1-1c36e7d9d622.PNG)
