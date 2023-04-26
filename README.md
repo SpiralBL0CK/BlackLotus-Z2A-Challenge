@@ -10,3 +10,8 @@ Now if we open this is ida
 
 I renemaed every function to indicate some logic it does, let's start with first function, do_syscall()
 ![Capture23](https://user-images.githubusercontent.com/25670930/234440293-966385b2-17a7-4407-b280-4bfe9556e1fb.PNG)
+
+We imediatly notice the use of syscalls, whhich it's a known method to make the life of an analyst harder when it comes to dynamic analysis.
+
+If we inspect the "pseudo-code" resolved by ida we see it looks like this 
+![Capture4](https://user-images.githubusercontent.com/25670930/234440494-7221a172-ad83-4325-8b4b-3110547e807c.PNG)
