@@ -29,3 +29,5 @@ If we inspect statically solve_hash it looks like this
 From a pseudo-perspective it looks like this 
 
 ![4](https://user-images.githubusercontent.com/25670930/234447356-0d7e2a7f-7805-40c5-a20d-d2225026e62a.PNG)
+
+Please reffer to solve_hash.py to see my "emulation" of this in case you wanna see a piece of automation. But non of the less this is part of a project called SysWhispers2 or at least that's what i pressume the malware's authors used as inspiration. None of the less please reffer to the upper videoclip of oalabs for better understanding.
