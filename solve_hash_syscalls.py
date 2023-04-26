@@ -34,6 +34,11 @@ def subs_box(a,b):
                 eax=a[r9d]
     return (a[0:r9d])
 
+def REV(n: int) -> int:
+    return ((n >> 24) & 0xff) | ((n << 8) & 0xff0000) | ((n >> 8) & 0xff00) | ((n << 24) & 0xff000000)
+    # If output of all the above expression is
+    # OR'ed then it results in 0xddccbbaa
+
 def ascii_range_decode2_suta_la_suta(requested_hash,x):
     """
         x = flink from previous function
@@ -95,7 +100,7 @@ def iterate_over_module_name_and_hash(x):
 def check_inmemory_ldr(y,x):
     r14 = x
     edx = 0
-    v4 = (iterate_over_module_name_and_hash(0x0000000D22E2014))
+    v4 = iterate_over_module_name_and_hash(0x0000000D22E2014)
     #print(v4)
     directory = ""
     if(v4):
@@ -112,14 +117,54 @@ def check_inmemory_ldr(y,x):
     given that the analysis was done on a windows 7 vm we replace directory variable with
     sys.argv[1] where argv[1] == ntdll from win7
     """
-    binar = open(directory,"rb").read()
+    binar = open(sys.argv[1],"rb").read()
     mz_header = binar[0:2]
     if(mz_header == b'MZ'):
         mz_header_binary = binar
         print("aici")
         pe_heder =  binar[binar[0x3c]:]
         if(pe_heder):
-            print(hexdump([binar[0x3c:]]))
+            x = (hexdump(pe_heder[0x8c:]))
+            if(x):
+                eax = int.from_bytes(pe_heder[0x88:0x8c])
+                #eax = binar[eax:]
+                eax = hex(eax)[2:8]
+                eax = int(eax,base=16)
+                eax = REV(eax) >> 8
+                print(hex(eax))
+                #print(hexdump(binar))
+                eax = binar[eax:]
+                r12d = eax[0x1c:0x1c+4]
+                r12d = int.from_bytes(r12d)
+                r12d = hex(r12d)[2:8]
+                r12d = int(r12d,base=16)
+                r12d = REV(r12d) >> 8
+                r12d = binar[r12d:]
+
+                r15d = eax[0x20:0x24] 
+                r15d = int.from_bytes(r15d)
+                r15d = hex(r15d)[2:8]
+                r15d = int(r15d,base=16)
+                r15d = REV(r15d) >> 8
+
+                r13d = eax[0x24:0x28] 
+                r13d = int.from_bytes(r13d)
+                r13d = hex(r13d)[2:8]
+                r13d = int(r13d,base=16)
+                r13d = REV(r13d) >> 8
+
+                r15d = binar[r15d:]
+
+                ebp = eax[0x18:0x18+2]
+                ebp = int.from_bytes(ebp)
+                ebp = hex(ebp)[2:8]
+                ebp = int(ebp,base=16)
+                ebp = REV(ebp) >> 8
+
+                r13d = binar[r13d:]                
+                print(hexdump(r13d))
+                for i in range(ebp):
+                    v11 = 
 
 def syscall_solve_hash(x):
         esi = x
