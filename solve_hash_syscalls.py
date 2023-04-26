@@ -1,5 +1,8 @@
+import copy
+from pwn import *
 from dumpulator import Dumpulator
 syscall_table = [0 for i in range(256)]
+lista_de_dll = []
 
 
 def some_hash_0x1003F(x):
@@ -11,7 +14,6 @@ def some_hash_0x1003F(x):
                 rez = rez * 0x1003f + ord(x[i])
                 if len(hex(rez)) > 8:
                     rez = ((rez)) & 0xffffffff
-                #print(hex(rez))
     return rez
 
 def subs_box(a,b):
@@ -93,7 +95,31 @@ def iterate_over_module_name_and_hash(x):
 def check_inmemory_ldr(y,x):
     r14 = x
     edx = 0
-    print(iterate_over_module_name_and_hash(0x0000000D22E2014))
+    v4 = (iterate_over_module_name_and_hash(0x0000000D22E2014))
+    #print(v4)
+    directory = ""
+    if(v4):
+        dp = Dumpulator("blacklotus.dmp",quiet=True)
+        for i in dp.modules._name_lookup:
+            if v4 in i:
+                if "C:\\" in i:
+                    directory = i.encode('utf-8')
+                else:
+                    continue
+    print(directory)
+    """
+    under normal circumstances this works fine
+    given that the analysis was done on a windows 7 vm we replace directory variable with
+    sys.argv[1] where argv[1] == ntdll from win7
+    """
+    binar = open(directory,"rb").read()
+    mz_header = binar[0:2]
+    if(mz_header == b'MZ'):
+        mz_header_binary = binar
+        print("aici")
+        pe_heder =  binar[binar[0x3c]:]
+        if(pe_heder):
+            print(hexdump([binar[0x3c:]]))
 
 def syscall_solve_hash(x):
         esi = x
