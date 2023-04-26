@@ -1,7 +1,7 @@
-import copy
 from pwn import *
 from dumpulator import Dumpulator
-syscall_table = [0 for i in range(256)]
+
+syscall_table = [0 for i in range(2000*4)]
 lista_de_dll = []
 
 
@@ -97,6 +97,9 @@ def iterate_over_module_name_and_hash(x):
     
 
 
+
+
+
 def check_inmemory_ldr(y,x):
     r14 = x
     edx = 0
@@ -165,6 +168,7 @@ def check_inmemory_ldr(y,x):
                 #print(hexdump(r15d))
                 eax = r15d
                 ebp = ebp >> 8
+                neparsat = []
                 for i in range(ebp-1,0,-1):
                     eax = i
                     ecx = r15d[(eax*4):(eax*4+4)]
@@ -174,11 +178,47 @@ def check_inmemory_ldr(y,x):
                     ecx = REV(ecx) >> 8
                     ebp = i
                     tmp = ecx
-                    ecx = binar[ecx:tmp+4]
-                    print(hexdump(ecx))
-                    if(ecx == b'wZ'):
+                    ecx = binar[ecx:tmp+0x30]
+                    if(b'Zw' in ecx):
+                        neparsat.append(ecx)
 
-
+                parsat = []
+                currnt_str = ""
+                for i in neparsat:
+                    for j in range(0,len(i)):
+                        if(chr(i[j]) == '\x00'):
+                            if "Zw" not in currnt_str:
+                                continue
+                            else:
+                                parsat.append(currnt_str)
+                                currnt_str = ""
+                        else:
+                            currnt_str += chr(i[j])
+                print(parsat)
+                cnt = 0
+                for i in parsat:
+                    v12 = 2*cnt
+                    temp = (hex(some_hash_0x1003F(i)))
+                    y[(cnt+1)] = {i:temp}
+                    #tf does this mean
+                    #*&a1[2 * v12 + 4] = *&v7[4 * *&v10[2 * v9]];
+                    rax = 0x718
+                    eax = r13d[rax*2:(rax*2+1)]
+                    eax = ord(eax)
+                    eax = hex(eax)[2:]
+                    eax = "0x7"+eax
+                    ecx = r12d[int(eax,base=16)*4:int(eax,base=16)*4+4]
+                    ecx = int.from_bytes(ecx)
+                    ecx = hex(ecx)[2:8]
+                    ecx = int(ecx,base=16)
+                    ecx = REV(ecx) >> 8
+                    print(hex(ecx))
+                    y[2*cnt+10] = ecx
+                    if(cnt == 500):
+                        break
+                    cnt += 1
+                print(y)
+                
 
 def syscall_solve_hash(x):
         esi = x
