@@ -42,3 +42,20 @@ And this is how the anti-debug "pseudo-function" looks like
 
 Pretty simple if you aks me 
 
+
+=============================================================================
+Following the execution order after this next function is
+
+![4](https://user-images.githubusercontent.com/25670930/234481129-696bd5ee-938e-44a1-8e1f-71132d935545.PNG)
+
+Again if we inspect to see what it does 
+
+![Capture4](https://user-images.githubusercontent.com/25670930/234481218-2bd855a3-40f8-449a-a197-4c3cd149b795.PNG)
+
+If simply checks a flag in teb to see if the current process(the exe in our case) is being debugged. This is yet again easily bypassable as it's a known method(https://anti-debug.checkpoint.com/techniques/debug-flags.html#manual-checks-peb-beingdebugged-flag) same way we used scyllahide this time you must have checked  
+![Capturez](https://user-images.githubusercontent.com/25670930/234481604-a76ed10c-ca39-44d2-b300-7a5a35f11445.PNG) 
+
+which should be on by default
+
+
+
