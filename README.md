@@ -12,7 +12,7 @@ Now if we open this is ida
 I renamed every function to indicate some logic it does, let's start with first function, do_syscall()
 ![Capture23](https://user-images.githubusercontent.com/25670930/234440293-966385b2-17a7-4407-b280-4bfe9556e1fb.PNG)
 
-We imediatly notice the use of syscalls, whhich it's a known method to make the life of an analyst harder when it comes to dynamic analysis.
+We imediatly notice the use of syscalls, which it's a known method to make the life of an analyst harder when it comes to dynamic analysis.
 
 For those who are not familiar with syscall's in windows here is a cool video made by oalabs(https://www.youtube.com/watch?v=Uba3SQH2jNE). Please watch it cause i did too and it helped me a lot to understand what happens in this function
 
