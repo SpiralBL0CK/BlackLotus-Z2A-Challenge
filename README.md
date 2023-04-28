@@ -71,6 +71,16 @@ If simply checks a flag in teb to see if the current process(the exe in our case
 ![Capturez](https://user-images.githubusercontent.com/25670930/234481604-a76ed10c-ca39-44d2-b300-7a5a35f11445.PNG) 
 
 which should be on by default
+=============================================================================
+Now custom_hash2_and_aplib_possible which looks like this 
+
+![2](https://user-images.githubusercontent.com/25670930/235200955-8ca34417-4d6a-4136-a51f-aa70c591c650.PNG)
+
+And from a graph perspective
+
+![3](https://user-images.githubusercontent.com/25670930/235201010-473cb758-4593-4e9a-9b80-ae60e59a5b87.PNG)
+
+
 
 
 
