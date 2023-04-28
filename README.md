@@ -54,7 +54,7 @@ Now for the purpose of the function analysis if we ask kind enough x86dbg we can
 
 Now based on the current context we can presume that Ntsetinformationthread we be used as some sort of anti analysis trick. Surely enough if we do a quick google search we come to find this   https://ntquery.wordpress.com/tag/ntqueryinformationthread/
 
-Fortunatelly ScyllaHide can also bypass this :)
+Fortunatelly easily bypass-able just nop+ret patch-it  :)
 
 
 =============================================================================
