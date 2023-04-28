@@ -48,10 +48,13 @@ Next we have check_inmemory_ldr function which looks like this
 
 ![2](https://user-images.githubusercontent.com/25670930/234482321-9239fab6-a526-401f-addd-b5cbf5af4868.PNG)
 
-Now for the purpose of the function analysis we we ask kind enough x86dbg we can see that if we run till syscall instruction x86dbg will be kind enough to return us the syscall it is about the execute . In our case
+Now for the purpose of the function analysis if we ask kind enough x86dbg we can see that if we run till syscall instruction x86dbg will be kind enough to return us the syscall it is about the execute . In our case
 
 ![2](https://user-images.githubusercontent.com/25670930/235189641-8a128581-ff8e-4b86-9d00-5bca940e9b17.PNG)
 
+Now based on the current context we can presume that Ntsetinformationthread we be used as some sort of anti analysis trick. Surely enough if we do a quick google search we come to find this   https://ntquery.wordpress.com/tag/ntqueryinformationthread/
+
+Fortunatelly ScyllaHide can also bypass this :)
 
 
 =============================================================================
