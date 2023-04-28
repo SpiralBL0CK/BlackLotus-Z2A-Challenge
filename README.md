@@ -82,7 +82,4 @@ And from a graph perspective
 
 ![3](https://user-images.githubusercontent.com/25670930/235201010-473cb758-4593-4e9a-9b80-ae60e59a5b87.PNG)
 
-
-
-
-
+Please reffer to decompress_aplib.py to see the "emulation" of this function.
