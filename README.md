@@ -83,3 +83,17 @@ And from a graph perspective
 ![3](https://user-images.githubusercontent.com/25670930/235201010-473cb758-4593-4e9a-9b80-ae60e59a5b87.PNG)
 
 Please reffer to decompress_aplib.py to see the "emulation" of this function.
+
+Exploring get_ntdll_and_unhook2 it looks like this
+
+![1](https://user-images.githubusercontent.com/25670930/235202145-ca0bcf54-8c61-4ee5-821b-830f60fdf68d.PNG)
+
+![2](https://user-images.githubusercontent.com/25670930/235202174-4433ec1f-2f42-424a-a473-52deb64c4200.PNG)
+
+
+From a graph view it looks like this 
+
+![1](https://user-images.githubusercontent.com/25670930/235202425-4a91b4b4-5a04-411f-9482-d570273514fb.PNG)
+
+Not too shabby :))
+
