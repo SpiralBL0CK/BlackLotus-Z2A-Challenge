@@ -100,3 +100,19 @@ Not too shabby :))
 Bakctracking a little we have aplib_decompress, now it looks like this 
 
 ![1](https://user-images.githubusercontent.com/25670930/235202700-aab40eda-cfa0-4e90-b512-1d6fc1f78b0f.PNG)
+
+From a static code analysis looks like this  
+
+![1](https://user-images.githubusercontent.com/25670930/235204049-6b05445e-12d0-4328-a335-74e6102dc72c.PNG)
+
+![2](https://user-images.githubusercontent.com/25670930/235204072-1533dc98-5fac-4de4-aa41-d2f217e12a21.PNG)
+
+![3](https://user-images.githubusercontent.com/25670930/235204089-cd06ae8e-88a7-4052-8c00-cebdad89e0a3.PNG)
+
+![4](https://user-images.githubusercontent.com/25670930/235204107-056b0815-2d2a-4314-9c37-6c0bc7e686ba.PNG)
+
+Mhmm a little big nothing to worry here folks it's doable :)
+
+
+
+
