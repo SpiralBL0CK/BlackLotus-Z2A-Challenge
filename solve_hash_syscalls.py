@@ -194,15 +194,12 @@ def check_inmemory_ldr(y,x):
                                 currnt_str = ""
                         else:
                             currnt_str += chr(i[j])
-                print(parsat)
+                #print(parsat)
                 cnt = 0
+                rax = 0x718
                 for i in parsat:
                     v12 = 2*cnt
                     temp = (hex(some_hash_0x1003F(i)))
-                    y[(cnt+1)] = {i:temp}
-                    #tf does this mean
-                    #*&a1[2 * v12 + 4] = *&v7[4 * *&v10[2 * v9]];
-                    rax = 0x718
                     eax = r13d[rax*2:(rax*2+1)]
                     eax = ord(eax)
                     eax = hex(eax)[2:]
@@ -212,13 +209,21 @@ def check_inmemory_ldr(y,x):
                     ecx = hex(ecx)[2:8]
                     ecx = int(ecx,base=16)
                     ecx = REV(ecx) >> 8
-                    print(hex(ecx))
-                    y[2*cnt+10] = ecx
+                    rax -= 1
+                    #print(hex(ecx))
+                    if(cnt == 0):                      
+                        #print(ecx)
+                        y[(cnt)+2] = {i:temp}
+                        y[(v12)+4] = hex(ecx)
+                        #print(y)
+                    else:
+                        pass
+                        y[(cnt+1)*2] = {i:temp} #pt debug fa {i:temp}
+                        y[(v12)+4] = hex(ecx)
                     if(cnt == 500):
                         break
-                    cnt += 1
+                    cnt += 2
                 print(y)
-                
 
 def syscall_solve_hash(x):
         esi = x
