@@ -97,3 +97,6 @@ From a graph view it looks like this
 
 Not too shabby :))
 
+Bakctracking a little we have aplib_decompress, now it looks like this 
+
+![1](https://user-images.githubusercontent.com/25670930/235202700-aab40eda-cfa0-4e90-b512-1d6fc1f78b0f.PNG)
