@@ -1,11 +1,80 @@
 import sys
+from pwn import * 
 from solve_hash_syscalls import iterate_over_module_name_and_hash
 
-def sub_13FDE67D4():
-    pass
+def sub_13FDE67D4(a,b,c,binar):
+    v5 = 0 
+    if(b > 2):
+        if(c):
+            dword_13FE5FA24 = 0
+            dword_13FE5FA28 = [None for i in range(0x7D0)]
+            dword_13FE5FA20 = [None for i in range(0x10)]
 
+        ecx = dword_13FE5FA24
+        v6 = b - 1
+        edx = a[v6*2]
+        print(hexdump(a))
+        print(hex(edx))
+        v8 = 0
+        edx = int(edx) - 0x60
+        eax = -1
+        r11 = dword_13FE5FA20[1]
+        print("aicia")
+        print(hex(edx))
+        print(hex(a[v6*2]))
+        if(int(a[v6*2]) <= 0x7F):
+            edx = a[v6*2]
+        print(hex(edx))
+        eax += b
+        dword_13FE5FA20[((eax*2+8)//4)+1] = edx
+        cnt_extern = b
+        rax_temp = 0
+        while ( v8 < b ):
+            print("in loop")
+            print("debug")
+            print(dword_13FE5FA20)
+            edx = dword_13FE5FA24
+            eax = b
+            eax -= v8
+            edx -= v8
+            eax -=1
+            edx += b
+            print(edx)
+            print(eax)
+            ecx = a[eax*2]
+            print(hex(ecx))
+            eax = b-1
+            if(int(ecx) >= 0x7f):
+                print("aicia")
+                xor_operand = dword_13FE5FA20[((eax*2+8)//4)+1]
+                print("xor_operand")
+                print(hex(xor_operand))
+                r8d =( ecx - 0x60 ) 
+                if(r8d ^ xor_operand == 0):
+                    dword_13FE5FA20[((eax*2+8)//4)] = hex(r8d ^ xor_operand)
+                else:
+                    dword_13FE5FA20[((eax*2+8)//4)] = hex(r8d ^ xor_operand)
+                print("r8d operand")
+                print(hex(r8d))
+                print(r8d)
+            v8 += 1
+        v12 = 0 
+        if(b != 1):
+            while(v12 < v6):
+                v13 = dword_13FE5FA24[v12]
+                v12 += 2
+                break
 
 def get_ntdll_and_unhook2(x):
+    """
+    None of the less the function starts like this 
+      if ( ntquertyinformationprocess_anti_debug() )// anti_debug
+                                                // 
+                                                // 
+    MEMORY[0] = 0x4E8C;
+    but we skip cause oh well dast is nice and it renders this anti debug usless
+    :)
+    """
     v2 = iterate_over_module_name_and_hash(x)
     v3 = v2
     if(v2 and v3):    
@@ -182,7 +251,7 @@ def get_ntdll_and_unhook2(x):
             unk_13FDEBC38 = [0x0C, 0x00, 0xCF, 0x00, 0x00, 0x00, 0xC3, 0x00, 0xBC, 0x00, 
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
             ]
-            sub_13FDE67D4(unk_13FDEBC38,5,1)
+            sub_13FDE67D4(unk_13FDEBC38,5,1,binar)
 
 
 if __name__ == "__main__":
