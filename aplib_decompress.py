@@ -2,6 +2,17 @@ import sys
 from pwn import * 
 from solve_hash_syscalls import iterate_over_module_name_and_hash
 
+def some_hash_0x1003F(x):
+    rez = 0
+    counter = 0
+    if(x):
+        for i in range(0,len(x)):
+            if(x[i]):
+                rez = rez * 0x1003f + ord(x[i])
+                if len(hex(rez)) > 8:
+                    rez = ((rez)) & 0xffffffff
+    return rez
+
 def sub_13FDE67D4(a,b,c,binar):
     v5 = 0 
     if(b > 2):
