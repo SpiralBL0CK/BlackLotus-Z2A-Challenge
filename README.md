@@ -152,7 +152,22 @@ and finally ProcessDebugFlags
 
 ![2](https://user-images.githubusercontent.com/25670930/235455063-026b69be-e9e3-43e5-a4fe-87a77f106f06.PNG)
 
+So how do we bypass them ?! Take a chill pill fam, cause ScyllaHide has about back braw
 
+![obama-pew](https://user-images.githubusercontent.com/25670930/235455334-fb2d901d-14e7-4fdb-8280-774a04dae763.gif)
+
+As you can see
+
+![1](https://user-images.githubusercontent.com/25670930/235455461-fc86f3d7-d65a-4621-8cbc-4278ff9a69fa.PNG)
+
+So we safe! Not quite, while ScyllaHide has our back for the first 2 syscall, for the last syscall we have to do it manually ? and wtf do i do ???
+Well simple solution! we return from this function so like from the whole ntquertyinformationprocess_anti_debug and set eax to 0 . So under normal circumasnces it looks like this
+
+![1](https://user-images.githubusercontent.com/25670930/235456335-c2fb717b-8e5a-43cc-96d6-155680a50f27.PNG)
+
+And with our "help" it looks like this and we safely let the execution go :)
+
+![1](https://user-images.githubusercontent.com/25670930/235456479-488d4478-4c1d-470a-862f-0180ed8f8705.PNG)
 
 
 
