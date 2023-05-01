@@ -161,7 +161,7 @@ As you can see
 
 ![1](https://user-images.githubusercontent.com/25670930/235455461-fc86f3d7-d65a-4621-8cbc-4278ff9a69fa.PNG)
 
-So we safe! Not quite, while ScyllaHide has our back for the first 2 syscall, for the last syscall we have to do it manually ? and wtf do i do ???
+So we safe! Not quite, while ScyllaHide has our back for the first 2 syscall, for the last syscall we have to do it manually ! and wtf do i do ???
 Well simple solution! we return from this function so like from the whole ntquertyinformationprocess_anti_debug and set eax to 0 . So under normal circumasnces it looks like this
 
 ![1](https://user-images.githubusercontent.com/25670930/235456335-c2fb717b-8e5a-43cc-96d6-155680a50f27.PNG)
