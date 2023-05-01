@@ -186,5 +186,28 @@ So we see that the syscall it does is
 
 ![1](https://user-images.githubusercontent.com/25670930/235469632-c9c95e4e-8ed0-471e-9434-dd36a88dd2f7.PNG)
 
+Now if we look ntquerydefaultlocale google shows that this is an undocumented api which takes 2 arguments(http://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented%20Functions%2FLocale%2FNtQueryDefaultLocale.html). Cool so what it does ? It returns current Locale Identifier. Cool so wtf is a Locale Identifier? From msdn (https://learn.microsoft.com/en-us/windows/win32/intl/locale-identifiers) a 32-bit value that consists of a language identifier and a sort order identifier. On a tl;dr note what language you speak on that pc :) 
+
+Afterwards it check to see if api didn't fail to execute and if it didn't fail to execute it takes the value returned by ntquerydefaultlocale, substract 0x419 compares it with 0x26(probably a constant) as you can see in the picture below.
+
+![1](https://user-images.githubusercontent.com/25670930/235471316-4f4b0ab7-7f73-44fd-a2d1-639a805b7eee.PNG)
+
+If it is not smaller or equal to 0x26 it compares it with 0x818 otherwise does same comparisson with 0x819 as you can clearly see
+
+![2](https://user-images.githubusercontent.com/25670930/235471604-a616e6c6-7f33-49fd-8af6-c0003addcf91.PNG)
+
+So wtf is happening here ? any why these specific constants. Well I'll be straight to point. While searching for constant i came around this article(https://www.cnblogs.com/DirWang/p/17281690.html#autoid-8-0-0), a researcher which has already analysed blacklotus better than I could. And as someone said once: "You can't cheat in malware analysis , you can just make your work easier". So what the researcher said is that basically this function checks for specific constants which identify what language is spoken on the computer . In his article he provides a link to this(https://winprotocoldoc.blob.core.windows.net/productionwindowsarchives/MS-LCID/[MS-LCID].pdf) which is like a standard document from microsoft with every language identifier. Here we see that the first 0x26 correspond to these regions.
+
+
+If we also inspect that document we can also see that 0x818 corresponds to 
+
+![2](https://user-images.githubusercontent.com/25670930/235472738-ea4b0039-ef9d-4bf7-b3b3-cafcd37825d3.PNG)
+
+and 0x819 to
+
+![2](https://user-images.githubusercontent.com/25670930/235472801-c9f1f290-6df0-4cb5-bb4d-27a6a1e92d4d.PNG)
+ 
+
+
 
 
