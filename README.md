@@ -226,3 +226,15 @@ We want more! Sure thing dawg!
 
 ![1](https://user-images.githubusercontent.com/25670930/235476679-6f8085a7-c172-4702-93ce-0fe5b57a2cb8.PNG)
 
+Hmmmm
+
+![1](https://user-images.githubusercontent.com/25670930/235477151-5ee808a6-b0c5-4fd1-9d63-80f9d37bc996.PNG)
+
+So check to see if kerneldebugger is present , checky checky!
+
+So what ack! We we g0t pcr(piles and combinations party)
+
+![2](https://user-images.githubusercontent.com/25670930/235477585-24f84c06-5ef9-4eaf-9dd1-aad3f30a7dbe.PNG)
+
+
+
