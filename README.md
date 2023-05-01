@@ -214,3 +214,15 @@ And we know from previous "investigations"/online reports that this malware dind
 
 =============================================================================
 
+Crazy ham00brg33r up to now , fam what next ? We server some_more_syscall function. Aight! So what you got there ack! Here it is 
+
+![1](https://user-images.githubusercontent.com/25670930/235475787-25bba373-97ea-47f4-90b4-0c06eceef0c8.PNG)
+
+We want more! Sure thing dawg! 
+
+![2](https://user-images.githubusercontent.com/25670930/235475880-3d59a01a-ad84-4f54-9a90-2807e16cd327.PNG)
+
+![3jgukd](https://user-images.githubusercontent.com/25670930/235475937-908fa0b3-bd72-44d7-9855-90d7d7523eed.png)
+
+![1](https://user-images.githubusercontent.com/25670930/235476679-6f8085a7-c172-4702-93ce-0fe5b57a2cb8.PNG)
+
