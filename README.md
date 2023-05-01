@@ -144,6 +144,15 @@ If we now go and check msdn page for ntqueryinformationprocess
 
 Same process repeats for the next two syscalls
 
+![2](https://user-images.githubusercontent.com/25670930/235454831-4949e203-2619-4947-b52f-040f53d60c27.PNG)
+
+which 0x1e is specific for ProcessDebugObjectHandle anti-debug method(https://www.apriorit.com/dev-blog/367-anti-reverse-engineering-protection-techniques-to-use-before-releasing-software)
+
+and finally ProcessDebugFlags
+
+![2](https://user-images.githubusercontent.com/25670930/235455063-026b69be-e9e3-43e5-a4fe-87a77f106f06.PNG)
+
+
 
 
 
