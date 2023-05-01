@@ -132,9 +132,16 @@ For convinience i have already named it, which is ntquertyinformationprocess_Pro
 
 ![1](https://user-images.githubusercontent.com/25670930/235452441-e9f85ce6-e461-4ae0-9e93-88d7ce7c50c0.PNG)
 
-What about the comments made in ida ? Well if you search ntqueryinformationprocess on google we come along a good resource about anti debugging(https://anti-debug.checkpoint.com/techniques/debug-flags.html) . If we follow allong we can see it explain us that based on certain values passed as parameters to this functions it can be used as an anti-debuggin method. For example for the first call we can see the following stack arguments in the debugger 
+What about the comments made in ida ? Well if you search ntqueryinformationprocess on google we come along a good resource about anti debugging(https://anti-debug.checkpoint.com/techniques/debug-flags.html) . If we follow allong we can see it explain us that based on certain values passed as parameters to this functions it can be used as an anti-debuggin method.
+
+For example for the first call we can see the following stack arguments in the debugger 
 
 ![1](https://user-images.githubusercontent.com/25670930/235453530-0d02843a-5ce4-469d-bf53-bceb179d1463.PNG)
+
+If we now go and check msdn paeg for ntqueryinformationprocess
+
+![1](https://user-images.githubusercontent.com/25670930/235453925-af8dca82-57ed-45ce-be1a-c331f75f25f2.PNG)
+
 
 
 
