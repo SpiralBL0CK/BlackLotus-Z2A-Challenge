@@ -138,9 +138,12 @@ For example for the first call we can see the following stack arguments in the d
 
 ![1](https://user-images.githubusercontent.com/25670930/235453530-0d02843a-5ce4-469d-bf53-bceb179d1463.PNG)
 
-If we now go and check msdn paeg for ntqueryinformationprocess
+If we now go and check msdn page for ntqueryinformationprocess
 
 ![1](https://user-images.githubusercontent.com/25670930/235453925-af8dca82-57ed-45ce-be1a-c331f75f25f2.PNG)
+
+Same process repeats for the next two syscalls
+
 
 
 
