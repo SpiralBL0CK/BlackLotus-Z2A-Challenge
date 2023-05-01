@@ -196,8 +196,11 @@ If it is not smaller or equal to 0x26 it compares it with 0x818 otherwise does s
 
 ![2](https://user-images.githubusercontent.com/25670930/235471604-a616e6c6-7f33-49fd-8af6-c0003addcf91.PNG)
 
-So wtf is happening here ? any why these specific constants. Well I'll be straight to point. While searching for constant i came around this article(https://www.cnblogs.com/DirWang/p/17281690.html#autoid-8-0-0), a researcher which has already analysed blacklotus better than I could. And as someone said once: "You can't cheat in malware analysis , you can just make your work easier". So what the researcher said is that basically this function checks for specific constants which identify what language is spoken on the computer . In his article he provides a link to this(https://winprotocoldoc.blob.core.windows.net/productionwindowsarchives/MS-LCID/[MS-LCID].pdf) which is like a standard document from microsoft with every language identifier. Here we see that the first 0x26 correspond to these regions.
+So wtf is happening here ? any why these specific constants. Well I'll be straight to point. While searching for different constants i came around this article(https://www.cnblogs.com/DirWang/p/17281690.html#autoid-8-0-0), a researcher which has already analysed blacklotus better than I could. And as someone said once: "You can't cheat in malware analysis , you can just make your work easier". So what the researcher said is that basically this function checks for specific constants which identify what language is spoken on the computer . In his article he provides a link to this(https://winprotocoldoc.blob.core.windows.net/productionwindowsarchives/MS-LCID/[MS-LCID].pdf) which is like a standard document from microsoft with every language identifier. 
 
+Now using our hax00r l33t logic we can deduct that probably 0x26 it like an offset used , so like any 0x26 next language identifiers after 0x419,which are 
+
+![2](https://user-images.githubusercontent.com/25670930/235473482-5d16d8bc-c89c-444b-9f66-6a48e0981306.PNG)
 
 If we also inspect that document we can also see that 0x818 corresponds to 
 
@@ -207,7 +210,7 @@ and 0x819 to
 
 ![2](https://user-images.githubusercontent.com/25670930/235472801-c9f1f290-6df0-4cb5-bb4d-27a6a1e92d4d.PNG)
  
+And we know from previous "investigations"/online reports that this malware dind't run on certain PC from certain regions of the world,  so we can conclude that this function checks to see on which region is the infected machine.
 
-
-
+=============================================================================
 
