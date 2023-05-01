@@ -182,4 +182,9 @@ And now pseudo-code
 
 We notice a strange thing here. Ida's pseudo-code fails here... because if we follow the graph after call_syscall there are more instruction to disassamble. So what we do here now ? Well we will relly on the debugger here to dynamically analyse this code...
 
+So we see that the syscall it does is 
+
+![1](https://user-images.githubusercontent.com/25670930/235469632-c9c95e4e-8ed0-471e-9434-dd36a88dd2f7.PNG)
+
+
 
