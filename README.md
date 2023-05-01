@@ -229,7 +229,7 @@ Hmmmm
 
 ![1](https://user-images.githubusercontent.com/25670930/235477151-5ee808a6-b0c5-4fd1-9d63-80f9d37bc996.PNG)
 
-So check to see if kerneldebugger is present , checky checky!
+So check to see if kerneldebugger is present(https://www.geoffchappell.com/studies/windows/km/ntoskrnl/inc/api/ntexapi/system_information_class.htm)(0x23) , checky checky!
 
 So what ack! We we g0t pcr(piles and combinations party)
 
