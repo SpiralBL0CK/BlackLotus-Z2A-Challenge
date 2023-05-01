@@ -115,10 +115,15 @@ Mhmm a little big nothing to worry here folks it's doable :)
 
 =============================================================================
 
-Going further with the analysis process, on the unexplained functions we have some_hasing and ntquertyinformationprocess_anti_debug, thoese have not been explained. check_if_being_debug_through_teb and anti_debug has already been explained fortunatelly because they were used in the upper function/functions, so please read upper sections if wanna revise the knowledge about them. I would like to start first with ntquertyinformationprocess_anti_debug and afterwards finish with some_hasing. Inspecting it
+Going further with the analysis process, on the unexplained functions we have some_hasing and ntquertyinformationprocess_anti_debug, thoese have not been explained. check_if_being_debug_through_teb and anti_debug has already been explained fortunatelly because they were used in the upper function/functions, so please read upper sections if wanna revise the knowledge about them. I would like to start first with ntquertyinformationprocess_anti_debug and afterwards finish with some_hasing. 
+Inspecting it
 
 ![1234](https://user-images.githubusercontent.com/25670930/235452022-34cd8dc2-7053-4882-801b-fdd20a9c56d0.PNG)
 
-we see it calls 3 functions. For casualty i have already named them, which is ntquertyinformationprocess_ProcessDebugPort
+we see it calls 3 functions. For convinience i have already named them, which is ntquertyinformationprocess_ProcessDebugPort. From where did i knwon the function which were called were ntquertyinformationprocess_ProcessDebugPort? Inspecting them reveals an already saw function call
+
+![1](https://user-images.githubusercontent.com/25670930/235452441-e9f85ce6-e461-4ae0-9e93-88d7ce7c50c0.PNG)
+
+
 
 
