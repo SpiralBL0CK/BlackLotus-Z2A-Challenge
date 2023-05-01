@@ -7,7 +7,8 @@ First things first
 
 Now if we open this is ida 
 
-![Capture23](https://user-images.githubusercontent.com/25670930/234440026-71be8ed0-abef-480f-ae5e-68b3be6e1140.PNG)
+![1](https://user-images.githubusercontent.com/25670930/235460224-5af9e521-a7cd-4eef-8dc5-06338cb109b2.PNG)
+
 
 I renamed every function to indicate some logic it does, let's start with first function, do_syscall()
 ![Capture23](https://user-images.githubusercontent.com/25670930/234440293-966385b2-17a7-4407-b280-4bfe9556e1fb.PNG)
