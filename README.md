@@ -277,7 +277,7 @@ Now to dynamically see if the any values correspond to any dll mentioned
 And sure enough it does :) 
 
 But how did i end-up coming wit the conclusion that the algorithms checks agains these values ? well when i emulated a piece of this malware i had to re-implement 
-iterate_over_module_name_and_hash and in this function we have  
+iterate_over_module_name_and_hash(in solve_hash_syscalls.py file ) and in this function we have  
 
 ![1](https://user-images.githubusercontent.com/25670930/236233701-6d6ae83f-a8fc-4906-810f-089ea70d4b80.PNG)
 
