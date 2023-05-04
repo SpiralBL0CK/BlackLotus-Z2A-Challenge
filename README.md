@@ -274,7 +274,16 @@ Now to dynamically see if the any values correspond to any dll mentioned
 
 ![2](https://user-images.githubusercontent.com/25670930/236228752-3ccba910-db44-429c-9a32-68ddd05d4b79.PNG)
 
-And sure enough it does :) Cool beans! Next
+And sure enough it does :) 
+
+But how did i end-up coming wit the conclusion that the algorithms checks agains these values ? well when i emulated a piece of this malware i had to re-implement 
+iterate_over_module_name_and_hash and in this function we have  
+
+![1](https://user-images.githubusercontent.com/25670930/236233701-6d6ae83f-a8fc-4906-810f-089ea70d4b80.PNG)
+
+where x(passed argument) in this case is v2 which is an array(a pointer) of values which gets increments(where it point in array) as long as it doesn't match any values from the upper already mentioned values. Man that's a mouthfull :P
+
+Cool beans! Next
 
 =============================================================================
 
