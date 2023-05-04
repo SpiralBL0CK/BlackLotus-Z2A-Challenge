@@ -235,5 +235,75 @@ So what ack! We we g0t pcr(piles and combinations party)
 
 ![2](https://user-images.githubusercontent.com/25670930/235477585-24f84c06-5ef9-4eaf-9dd1-aad3f30a7dbe.PNG)
 
+=============================================================================
 
+Now if we inspect iterate_over_modules() function it looks like this 
 
+![1](https://user-images.githubusercontent.com/25670930/236223219-c1823707-206b-4f71-9a9c-cbd1665e214b.PNG)
+
+From a "pseudo-code" perspective it looks like 
+
+![2](https://user-images.githubusercontent.com/25670930/236224238-794e57d6-adbf-49fe-bf76-779154527783.PNG)
+
+From a standalone pov it looks like the assembly and ida's pseudo-code match, so what is the logic of this function do ? well pretty simple, it iterates over the in memory modules(dll's) and checks against a list of hashes :)
+  v4[0] = 0x1E7EACEF;
+  v4[1] = 0x4468A620;
+  v4[2] = 0x68536B95;
+  v4[3] = 0x73EBBB53;
+  v4[4] = 0xDA165168;
+  v4[5] = 0xB24D33A7;
+  v4[6] = 0xB1E2CEC6;
+  v4[7] = 0x5136992;
+  v4[8] = 0x98C500D9;
+  v4[9] = 0x3E0169B6;
+
+And if no in memory dll's were found to have same hash we return 0 , else 1 and we crash the debugger. And so such a conclusion we can say this is another anti-analysis method. Correct but what about each of the hash values ? Well i'll cheat again(as someone said once you can't cheat at malware analysis, only make your life more easier :) ). The upper afro-mentioned asian researcher was kind enough to provide us a list of values from which the values were derived 
+
+sbiedll.dll
+dbghelp.dll
+api_log.dll
+dir_watch.dll
+pstorec.dll
+vmcheck.dll
+wpespy.dll
+cmdvrt64.dll
+avghookx.dll
+snxhk.dll
+
+Now to dynamically see if the any values correspond to any dll mentioned
+
+![2](https://user-images.githubusercontent.com/25670930/236228752-3ccba910-db44-429c-9a32-68ddd05d4b79.PNG)
+
+And sure enough it does :) Cool beans! Next
+
+=============================================================================
+
+iterate_over_modules2 roughly same story here 
+
+![1](https://user-images.githubusercontent.com/25670930/236229272-a3987e6f-d0ab-4c8e-ba6c-57358dd1bd74.PNG)
+
+And pseudo-code
+
+![2](https://user-images.githubusercontent.com/25670930/236229408-54cc456d-e053-41df-92af-ec9e30d49430.PNG)
+
+Roughly same story only different hashes :)
+
+  v5[0] = 0x7D73878E;
+  v5[1] = 0xEF36424B;
+  v5[2] = 0xAF64BC2B;
+  v5[3] = 0x1DBBC879;
+  v5[4] = 0xAE6D1D56;
+  v5[5] = 0x7B3242F2;
+  v5[6] = 0x14D922B9;
+  v5[7] = 0x4C92DF53;
+
+which correspond to 
+
+sample.exe
+bot.exe
+sandbox.exe
+malware.exe
+test.exe
+klavme.exe
+myapp.exe
+testapp.exe
