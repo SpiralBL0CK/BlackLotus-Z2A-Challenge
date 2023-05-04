@@ -316,3 +316,49 @@ test.exe
 klavme.exe
 myapp.exe
 testapp.exe
+
+=============================================================================
+
+iterate_over_modules3 same story here 
+
+![1](https://user-images.githubusercontent.com/25670930/236249754-215715e5-3272-4046-a33b-003f009e4c8d.PNG)
+
+And pseudo-code
+
+![2](https://user-images.githubusercontent.com/25670930/236249790-42551140-7225-4573-86b0-f5c56f5b28b5.PNG)
+
+same story different hashes :)
+
+  v4[0] = 0x42D12D59;
+  v4[1] = 0xEC5D7AA;
+  v4[2] = 0x861E460F;
+  v4[3] = 0x84BCC8DB;
+  v4[4] = 0x6474D72B;
+  v4[5] = 0xB8B9C504;
+  v4[6] = 0x69A0620E;
+  v4[7] = 0x6017EE43;
+  v4[8] = 0xE93BE2E0;
+  v4[9] = 0x149EFC55;
+  v4[10] = 0xE3FA84A4;
+  v4[11] = 0x7CFDD7AF;
+  v4[12] = 0x5B098C67;
+  v4[13] = 0x2F1FB18E;
+  v4[14] = 0xFE8F2B18;
+  
+which correspond to 
+
+prl_cc.exe
+prl_tools.exe
+qemu-ga.exe
+vmtoolsd.exe
+vmwaretray.exe
+vmwareuser.exe
+VGAuthService.exe
+vmacthlp.exe
+vboxservice.exe
+vboxtray.exe
+VMSrvc.exe
+VMUSrvc.exe
+xenservice.exe
+
+=============================================================================
