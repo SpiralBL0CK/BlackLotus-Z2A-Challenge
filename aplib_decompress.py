@@ -4,8 +4,11 @@ from pwn import *
 from solve_hash_syscalls import iterate_over_module_name_and_hash
 
 def sub_13FDE67D4(a,b,c,binar):
+    """
+    goal return \\??\\ as string
+    """
     v5 = 0 
-    print(a)
+    #print(a)
     if(b > 2):
         if(c):
             dword_13FE5FA24 = 0
@@ -15,18 +18,18 @@ def sub_13FDE67D4(a,b,c,binar):
         ecx = dword_13FE5FA24
         v6 = b - 1
         edx = a[v6*2]
-        print(hexdump(a))
-        print(hex(edx))
+        #print(hexdump(a))
+        #print(hex(edx))
         v8 = 0
         edx = int(edx) - 0x60
         eax = -1
         r11 = dword_13FE5FA20[1]
-        print("aicia")
-        print(hex(edx))
-        print(hex(a[v6*2]))
+        #print("aicia")
+        #print(hex(edx))
+        #print(hex(a[v6*2]))
         if(int(a[v6*2]) <= 0x7F):
             edx = a[v6*2]
-        print(hex(edx))
+        #print(hex(edx))
         eax += b
         dword_13FE5FA20[((eax*2+8)//4)+1] = hex(edx)
         cnt_extern = b
@@ -45,12 +48,13 @@ def sub_13FDE67D4(a,b,c,binar):
             #eax = b-1
             #print("aicia2")
             xor_operand = int(str(dword_13FE5FA20[b-v8]),base=16)
-            print("xor_operand")
-            print(hex(xor_operand))
+            #print("xor_operand")
+            #print(hex(xor_operand))
             r8d =( ecx - 0x60 )
             if(r8d < 0):
-                print("aicia3")
+                #print("aicia3")
                 r8d =( ecx - 0x60 )  & 0xffffffff
+                #print(hex(r8d))
                 r8d = hex(r8d)[2:6]+"0000"
                 r8d = int(r8d,base=16)
 
@@ -60,20 +64,67 @@ def sub_13FDE67D4(a,b,c,binar):
             else:
                 if(len(hex(r8d ^ xor_operand)) > 4):
                     dword_13FE5FA20[b-v8-1] = "0x"+hex(r8d ^ xor_operand)[-2:]
+                    """
+                    current bug
+                    din 0xffffffa0 -> paddui manual in ffff0000 e bun pt prim caz da al 2
+                    a 2 iteratie ar trebui sa fie 0xffffffac->00000000FFFF000C
+                    """
                 else:
                     dword_13FE5FA20[b-v8-1] = hex(r8d ^ xor_operand)
-            print("r8d operand")
-            print(hex(r8d))
+            #print("r8d operand")
+            #print(hex(r8d))
             #print(r8d)
-            print(dword_13FE5FA20)
+            #print(dword_13FE5FA20)
             v8 += 1
-
+        dword_13FE5FA20 = dword_13FE5FA20[0:5]
+        print(dword_13FE5FA20)
+        
         v12 = 0 
         if(b != 1):
             while(v12 < v6):
-                v13 = dword_13FE5FA24
+                eax = dword_13FE5FA24+v12
+                edx = eax
+                print(eax,edx)
+                r8d = dword_13FE5FA20[v12]
+                print(r8d)
+                eax +=1
+                eax = dword_13FE5FA20[eax]
+                dword_13FE5FA20[edx] = eax
+                ecx = v12+1
+                dword_13FE5FA20[ecx] = r8d
+                #print(dword_13FE5FA20)
                 v12 += 2
-                break
+        print(dword_13FE5FA20)
+
+        r10 = 0
+        for i in range(2):
+            ecx = dword_13FE5FA24
+            eax = ecx+r10
+            ecx -= r10
+            r8d = dword_13FE5FA20[eax]
+            edx = eax
+            #print(edx)
+            eax = b-1
+            eax += ecx
+            eax = dword_13FE5FA20[eax]
+            dword_13FE5FA20[edx] = eax
+            eax = dword_13FE5FA24
+            eax -= r10
+            r10 += 1
+            eax -= 1
+            eax +=b
+            #print(eax)
+            dword_13FE5FA20[eax] = r8d
+
+        print(dword_13FE5FA20)
+        edx = dword_13FE5FA24
+        dword_13FE5FA20[4] = 0x00
+        dword_13FE5FA20.insert(0,b)
+        print(dword_13FE5FA20)
+        s = ""
+        for i in range(1,len(dword_13FE5FA20)):
+            s += chr(int(str(dword_13FE5FA20[i]),base=16))
+        return s
 
 def get_ntdll_and_unhook2(x):
     """
@@ -259,8 +310,14 @@ def get_ntdll_and_unhook2(x):
             r8d = r13d
             edx = r13d+4
             unk_13FDEBC38 = [0x0C, 0x00, 0xCF, 0x00, 0x00, 0x00, 0xC3, 0x00, 0xBC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
-            sub_13FDE67D4(unk_13FDEBC38,5,1,binar)
-
+            v5 = sub_13FDE67D4(unk_13FDEBC38,5,1,binar)
+            edx = 0x108
+            rcx = [0x33, 0x00, 0x33, 0x00, 0x61, 0x00, 0x65, 0x00, 0x39, 0x00, 0x31, 0x00, 0x36, 0x00, 0x63, 0x00,
+                0x63, 0x00, 0x35, 0x00, 0x34, 0x00, 0x66, 0x00, 0x35, 0x00, 0x61, 0x00, 0x36, 0x00, 0x36, 0x00,
+                0x00, 0x00, 0x65, 0x00, 0x78, 0x00, 0x65, 0x00] # this corresponds to 33ae916cc54f5a66.exe
+            r9d = edx
+            r8d = rcx
+            
 
 if __name__ == "__main__":
     ntdll = get_ntdll_and_unhook2(0xD22E2014)
