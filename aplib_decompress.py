@@ -1,7 +1,45 @@
 import sys
 import math
+import re
 from pwn import * 
 from solve_hash_syscalls import iterate_over_module_name_and_hash
+
+
+def my_wcsncat(a,b,c):
+    """
+    b = source in our case c:\\windows\\system32\ntdll.dll
+    a = destination in our case buffer(\\??\\)+b
+    c = size de concatenat
+    alltough this algorithm seems to support unicode fuck unicode :)
+    we do it normally as normal human beings :)
+    """
+    rax = c-1
+    r11 = b
+    r9 = c
+    rbx = a
+    if(rax > 0x7FFFFFFE):
+        return 0x80070057
+    else:
+        r10 = c
+        rax = a
+        edi = 0
+        ctr = 0
+        if(len(rax) == edi):
+            return 
+        else:
+            while(rax):
+                if(rax == "00"):#or (rax == "00" and a[ctr+2:ctr+4] and a[ctr+6:ctr+8]))):
+                    break
+                rax = a[ctr:ctr+2]
+                #print(hex(r10))
+                ctr += 1
+                print(hex(r10))
+                r10 -=1
+            rax = r10-1
+            rcx = c
+            rax = ~rax 
+            print(hex(rax& 0xffffffff))
+            rax = r10
 
 def replace_str_index(text,index=0,replacement=''):
     return f'{text[:index]}{replacement}{text[index+1:]}'
@@ -324,17 +362,18 @@ def get_ntdll_and_unhook2(x):
             new_s = ""
             for i in range(0,len(rcx),2):
                 new_s += chr(rcx[i])
-            for i in range(0,len(rax)-1):
+            print(new_s)
+            for i in range(0,len(rax)):
                 new_s = replace_str_index(new_s,i,rax[i])
             r8d = new_s[3:]
             print(r8d)
             rcx = new_s
-            rax = new_s[4:]
-            #r8 = "C:\\Windows\\SYSTEM32\ntdll.dll"
-            """
-            given that the analysis was being done on a win7 machine and the script was developed
-            on a win10 machine we will use sys.argv[1] as win7 dll's was being feed through sys.argv[1]
-            """
-            
+            rax = new_s
+            print(rax)
+            res = (re.sub('.', lambda x: r'%04X' % ord(x.group()), rax))
+            print(res)
+            r8 = "C:\\Windows\\SYSTEM32\ntdll.dll"
+            my_wcsncat(res[2:],r8,0x108)
+
 if __name__ == "__main__":
     ntdll = get_ntdll_and_unhook2(0xD22E2014)
