@@ -1,20 +1,11 @@
 import sys
+import math
 from pwn import * 
 from solve_hash_syscalls import iterate_over_module_name_and_hash
 
-def some_hash_0x1003F(x):
-    rez = 0
-    counter = 0
-    if(x):
-        for i in range(0,len(x)):
-            if(x[i]):
-                rez = rez * 0x1003f + ord(x[i])
-                if len(hex(rez)) > 8:
-                    rez = ((rez)) & 0xffffffff
-    return rez
-
 def sub_13FDE67D4(a,b,c,binar):
     v5 = 0 
+    print(a)
     if(b > 2):
         if(c):
             dword_13FE5FA24 = 0
@@ -37,42 +28,50 @@ def sub_13FDE67D4(a,b,c,binar):
             edx = a[v6*2]
         print(hex(edx))
         eax += b
-        dword_13FE5FA20[((eax*2+8)//4)+1] = edx
+        dword_13FE5FA20[((eax*2+8)//4)+1] = hex(edx)
         cnt_extern = b
         rax_temp = 0
         while ( v8 < b ):
-            print("in loop")
-            print("debug")
-            print(dword_13FE5FA20)
+            #print(v8,b)
             edx = dword_13FE5FA24
             eax = b
             eax -= v8
             edx -= v8
             eax -=1
             edx += b
-            print(edx)
-            print(eax)
+            #print(eax,int(math.floor((eax*2+8)/4)))
             ecx = a[eax*2]
-            print(hex(ecx))
-            eax = b-1
-            if(int(ecx) >= 0x7f):
-                print("aicia")
-                xor_operand = dword_13FE5FA20[((eax*2+8)//4)+1]
-                print("xor_operand")
-                print(hex(xor_operand))
-                r8d =( ecx - 0x60 ) 
-                if(r8d ^ xor_operand == 0):
-                    dword_13FE5FA20[((eax*2+8)//4)] = hex(r8d ^ xor_operand)
+            #print(hex(ecx))
+            #eax = b-1
+            #print("aicia2")
+            xor_operand = int(str(dword_13FE5FA20[b-v8]),base=16)
+            print("xor_operand")
+            print(hex(xor_operand))
+            r8d =( ecx - 0x60 )
+            if(r8d < 0):
+                print("aicia3")
+                r8d =( ecx - 0x60 )  & 0xffffffff
+                r8d = hex(r8d)[2:6]+"0000"
+                r8d = int(r8d,base=16)
+
+            if(r8d ^ xor_operand == 0):
+            #print(eax,int(math.floor((eax*2+8)/4)))
+                dword_13FE5FA20[b-v8-1] = hex(xor_operand)
+            else:
+                if(len(hex(r8d ^ xor_operand)) > 4):
+                    dword_13FE5FA20[b-v8-1] = "0x"+hex(r8d ^ xor_operand)[-2:]
                 else:
-                    dword_13FE5FA20[((eax*2+8)//4)] = hex(r8d ^ xor_operand)
-                print("r8d operand")
-                print(hex(r8d))
-                print(r8d)
+                    dword_13FE5FA20[b-v8-1] = hex(r8d ^ xor_operand)
+            print("r8d operand")
+            print(hex(r8d))
+            #print(r8d)
+            print(dword_13FE5FA20)
             v8 += 1
+
         v12 = 0 
         if(b != 1):
             while(v12 < v6):
-                v13 = dword_13FE5FA24[v12]
+                v13 = dword_13FE5FA24
                 v12 += 2
                 break
 
@@ -259,9 +258,7 @@ def get_ntdll_and_unhook2(x):
             r13d = 1
             r8d = r13d
             edx = r13d+4
-            unk_13FDEBC38 = [0x0C, 0x00, 0xCF, 0x00, 0x00, 0x00, 0xC3, 0x00, 0xBC, 0x00, 
-                0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-            ]
+            unk_13FDEBC38 = [0x0C, 0x00, 0xCF, 0x00, 0x00, 0x00, 0xC3, 0x00, 0xBC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
             sub_13FDE67D4(unk_13FDEBC38,5,1,binar)
 
 
