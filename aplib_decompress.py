@@ -3,6 +3,9 @@ import math
 from pwn import * 
 from solve_hash_syscalls import iterate_over_module_name_and_hash
 
+def replace_str_index(text,index=0,replacement=''):
+    return f'{text[:index]}{replacement}{text[index+1:]}'
+
 def sub_13FDE67D4(a,b,c,binar):
     """
     goal return \\??\\ as string
@@ -310,7 +313,7 @@ def get_ntdll_and_unhook2(x):
             r8d = r13d
             edx = r13d+4
             unk_13FDEBC38 = [0x0C, 0x00, 0xCF, 0x00, 0x00, 0x00, 0xC3, 0x00, 0xBC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
-            v5 = sub_13FDE67D4(unk_13FDEBC38,5,1,binar)
+            rax = sub_13FDE67D4(unk_13FDEBC38,5,1,binar)
             edx = 0x108
             rcx = [0x33, 0x00, 0x33, 0x00, 0x61, 0x00, 0x65, 0x00, 0x39, 0x00, 0x31, 0x00, 0x36, 0x00, 0x63, 0x00,
                 0x63, 0x00, 0x35, 0x00, 0x34, 0x00, 0x66, 0x00, 0x35, 0x00, 0x61, 0x00, 0x36, 0x00, 0x36, 0x00,
@@ -318,6 +321,20 @@ def get_ntdll_and_unhook2(x):
             r9d = edx
             r8d = rcx
             
-
+            new_s = ""
+            for i in range(0,len(rcx),2):
+                new_s += chr(rcx[i])
+            for i in range(0,len(rax)-1):
+                new_s = replace_str_index(new_s,i,rax[i])
+            r8d = new_s[3:]
+            print(r8d)
+            rcx = new_s
+            rax = new_s[4:]
+            #r8 = "C:\\Windows\\SYSTEM32\ntdll.dll"
+            """
+            given that the analysis was being done on a win7 machine and the script was developed
+            on a win10 machine we will use sys.argv[1] as win7 dll's was being feed through sys.argv[1]
+            """
+            
 if __name__ == "__main__":
     ntdll = get_ntdll_and_unhook2(0xD22E2014)
