@@ -406,7 +406,8 @@ def get_ntdll_and_unhook2(x):
             print(z)
             z="xxxx"+z[4:]
             print(z)
-            z = z[0:6]+z[15:]
+            k=z
+            z = z[0:7]+z[17:19]+z[len(z)-4:len(z)]
             print(z)
             #ntcreatefile syscall now, dece0771658c\??PC:\Windows\SYSTEM32\ntdll.dll as argument
             dp = Dumpulator("blacklotus.dmp",quiet=True)
@@ -425,12 +426,18 @@ def get_ntdll_and_unhook2(x):
                 print("====================================================") 
                 r14 = v13[i+2:]
                 #print(hexdump(r14))
-                rcx = r14[22:]
+                rcx = r14[22:27]
+                rcx = "".join(map(chr, rcx))
                 print("====================================================") 
-                print(hexdump(rcx))
-                if(some_hash_0x1003F(rcx) == 0x7BC3E49B):
-                    break
-                
+                #print(hexdump(rcx))
+                print((rcx))
+                print(hex(some_hash_0x1003F(rcx)))
+                #if(some_hash_0x1003F(rcx) == 0x7BC3E49B):
+                #    break
+                eax = int.from_bytes(r14[0x22:0x26],"little")
+                #print(hexdump(binar[eax:]))
+                rcx = -1
+                eax = v13
                 i+=1
                 break
 
