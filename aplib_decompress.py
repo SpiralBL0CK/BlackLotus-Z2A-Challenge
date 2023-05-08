@@ -7,6 +7,65 @@ from solve_hash_syscalls import iterate_over_module_name_and_hash
 from solve_hash_syscalls import some_hash_0x1003F
 
 
+def aplib_decompress(base,binar_ntdll, a2, a3):
+    """
+    a2 = hash
+    a3 = return val i guess
+    base = baza pt binar aicia e useless
+    binar_ntdll = binary catre ntdll
+    """
+    v34 = a2
+    v5 = 0
+    v6 = 0
+    v33 = 0
+    v32 = [None for i in range(0x208)]
+    v7 = 260
+    v30 = [None for i in range(0x104)]
+    mz_header = binar[0:2]
+    if(mz_header == b'MZ'):
+        mz_header_binary = binar
+        print("aici")
+        pe_heder =  binar[binar[0x3c]:]
+        print(a3)
+        if(pe_heder):
+            #print(hexdump(pe_heder[0x8c:]))
+            if(pe_heder[0x8c:] != ""):
+                esi = pe_heder[0x88:0x8c]
+                esi = int.from_bytes(esi,"little")
+                #print(hex(esi))
+                #esi = hex(esi)[:-4:-1]
+                #esi = int("0x"+(esi[::-1]),base=16)
+                rsi = binar_ntdll[esi:]
+                eax = rsi[0x24:0x28]
+                eax = int.from_bytes(eax,"little")
+                rax = binar_ntdll[eax:]
+                #print(hexdump(rax))
+                eax = rsi[0x20:0x24]
+                eax = int.from_bytes(eax,"little")
+                rax = binar[eax:]
+                if(a2):
+                    r12d = 0
+                    temp = int.from_bytes(rsi[0x18:0x1c],"little")
+                    print(hex(temp))
+                    if(temp > 0):
+                        ebx = 0 
+                        while(True):
+                            ecx = int.from_bytes(rax[ebx:ebx+4],"little")
+                            rcx = binar[ecx:ecx+4]
+                            v14 = some_hash_0x1003F(rcx)
+                            if(v14 == a2):
+                                break
+                            ebx  += 1
+                            break
+                    else:
+                        """
+                        still idk whhat to implement here :(
+                        """
+                        pass
+                else:
+                    pass
+
+
 def my_wcsncat(a,b,c):
     """
     b = source in our case c:\\windows\\system32\ntdll.dll
@@ -410,9 +469,10 @@ def get_ntdll_and_unhook2(x):
             z = z[0:7]+z[17:19]+z[len(z)-4:len(z)]
             print(z)
             #ntcreatefile syscall now, dece0771658c\??PC:\Windows\SYSTEM32\ntdll.dll as argument
-            dp = Dumpulator("blacklotus.dmp",quiet=True)
+            dp = Dumpulator("blacklotus.dmp")
             current_modules = []
             modules = dp.modules._name_lookup
+            print(dir(dp))
             for key in modules:
                 if not 'C:' in key:
                     current_modules.append(key)
@@ -440,7 +500,10 @@ def get_ntdll_and_unhook2(x):
                 eax = v13
                 i+=1
                 break
-
+    return r8
 
 if __name__ == "__main__":
-    ntdll = get_ntdll_and_unhook2(0xD22E2014)
+    path = get_ntdll_and_unhook2(0xD22E2014)
+    ntdll_base = 0x13f280000 # use this as constant for now it is what it is 
+    binar = open(sys.argv[1],"rb").read()
+    qword_7FF603B1F600 = aplib_decompress(ntdll_base,binar, 0xB08469DD, path)
