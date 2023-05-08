@@ -2,7 +2,9 @@ import sys
 import math
 import re
 from pwn import * 
+from dumpulator import Dumpulator
 from solve_hash_syscalls import iterate_over_module_name_and_hash
+from solve_hash_syscalls import some_hash_0x1003F
 
 
 def my_wcsncat(a,b,c):
@@ -366,14 +368,72 @@ def get_ntdll_and_unhook2(x):
             for i in range(0,len(rax)):
                 new_s = replace_str_index(new_s,i,rax[i])
             r8d = new_s[3:]
-            print(r8d)
+            #print(r8d)
             rcx = new_s
             rax = new_s
-            print(rax)
+            #print(rax)
             res = (re.sub('.', lambda x: r'%04X' % ord(x.group()), rax))
-            print(res)
-            r8 = "C:\\Windows\\SYSTEM32\ntdll.dll"
-            my_wcsncat(res[2:],r8,0x108)
+            #print(res)
+            r8 = "C:\\Windows\\SYSTEM32\\ntdll.dll"
+            #my_wcsncat(res[2:],r8,0x108)
+            """
+            pana cand apuc sa lucrez cu danii sa emulz kkt ila fac manual concatenare
+            """
+            rax = new_s[0:4]+r8
+            print(rax)
+            print(hex(len(rax)))
+            rcx = rax   
+            v15 = [None for i in range(len(rax))]
+            v15_1 =  [None for i in range(len(rax)+1)]
+            y = "dece0771658c"
+            z = "f9518e4f80499d93d8c5a1eddece0771658c"
+            z = "0"+z[2:]
+            print(z)
+            z = z[0:3]+z[7:]
+            print(z)
+            x = "d68f668b4240f9518e4f80499d93d8c5a1eddece0771658c33ae916cc54f5a66"
+            pos = x.find(y)
+            r9 = x[pos:(pos+len(y))]+rax
+            print(r9)
+            pos = x.find(z)
+            r8 = x[pos:(pos+len(z))]+rax
+            print(r8)
+            rax = len(rax)+1
+            v19 = v15
+            rdx = 1
+            rax = "BDdl"
+            z = z[3:7]+"@"+z[9:]
+            print(z)
+            z="xxxx"+z[4:]
+            print(z)
+            z = z[0:6]+z[15:]
+            print(z)
+            #ntcreatefile syscall now, dece0771658c\??PC:\Windows\SYSTEM32\ntdll.dll as argument
+            dp = Dumpulator("blacklotus.dmp",quiet=True)
+            current_modules = []
+            modules = dp.modules._name_lookup
+            for key in modules:
+                if not 'C:' in key:
+                    current_modules.append(key)
+            current_modules = current_modules[1:]
+            print(current_modules)
+            flag = 0 
+            i = 0
+            while(True):
+                v13 = pe_heder[pe_heder[0x14]:]
+                #print(hexdump(v13))
+                print("====================================================") 
+                r14 = v13[i+2:]
+                #print(hexdump(r14))
+                rcx = r14[22:]
+                print("====================================================") 
+                print(hexdump(rcx))
+                if(some_hash_0x1003F(rcx) == 0x7BC3E49B):
+                    break
+                
+                i+=1
+                break
+
 
 if __name__ == "__main__":
     ntdll = get_ntdll_and_unhook2(0xD22E2014)
