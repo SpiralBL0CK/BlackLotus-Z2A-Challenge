@@ -118,15 +118,13 @@ If you use the aplib_decompress.py emulation script you should end up with somet
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/3f500374-270f-4f79-96b4-69f37bd124fb)
 
-Cool thing i didn't notice on other blogs/analysis was this if we take a look again at ida's graph for aplib_compress function(btw it's not aplib i just called it this dummy name)
+Cool thing i didn't notice on other blogs/analysis was this if we take a look again at ida's pseudo code for ntdll_and_unhook2 
 
-![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/bb5d80f5-a8d0-448d-b7ed-68c09487080d)
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/d6846678-ca81-40a6-b91d-3bee1fca1f07)
 
-you'll see that i colored some branches from the graph, thoese branches were the branches i ended up hitting and resulted in what i wanted to emulate, Now the interesting part is this 
+you'll see a interesting memcpy
 
-![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/e8347513-a2b7-4cf2-afbd-d67484b4e4e2)
-
-because at one point when i was doing the dynamica analysis i noticed another dll being loaded, which was another version of ntdll
+one point when i was doing the dynamica analysis i noticed another dll being loaded, which was another version of ntdll
 
 =============================================================================
 
