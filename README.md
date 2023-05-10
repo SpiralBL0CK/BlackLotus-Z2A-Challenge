@@ -29,6 +29,7 @@ rule Blacklotus_HTTP_Downloader
 
         condition:
             (uint16(0) == 0x5a4d and filesize < 500KB and all of them)
+}
 ```
 
 Also for aesthetical reasone i will also steal this because it looks cool :) again sorry ryan please don't get mad on me :)
