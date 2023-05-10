@@ -5,6 +5,30 @@ BlackLotus-Z2A-Challenge, Nothing to see here 4 now , please move along
 First things first
 ![Capture23](https://user-images.githubusercontent.com/25670930/234439907-a5ecfec7-16f0-48a3-89b8-97c362a927c2.PNG)
 
+For aesthetic purposes soley, I will shamesly burrow(steal) :)) from ```@darthmaulware(Ryan “DM” Smith)``` solution the yara detection rule just to make it look proffesional. Go check his twitter he's a fking cool person! Ps. Ryan please don't get mad bc i stole that :))) and thx for support in discord :) 
+
+Please check his work also :) https://gitlab.com/malre-rcs/zero2automated/-/blob/main/solutions/bi_weekly_challenge/BlackLotus_20230321/BlackLotus_HTTP_Downloader.ipynb
+
+```
+rule Blacklotus_HTTP_Downloader
+{
+        meta:
+            description = "Rule to detect Blacklotus HTTP Downloader"
+            author = "Darth Maulware"
+            sha256 = "d68f668b4240f9518e4f80499d93d8c5a1eddece0771658c33ae916cc54f5a66"
+
+        strings:
+            $opcode1 = {48 89 4C 24 08 48 89 54 24 10 4C}
+            $opcode2 = {89 44 24 18 4C 89 4C 24 20 48 83}
+            $opcode3 = {EC 28 B9 31 62 D7 2E 90 90 E8 ??}
+            $opcode4 = {?? ?? ?? 48 83 C4 28 48 8B 4C 24}
+            $opcode5 = {08 48 8B 54 24 10 4C 8B 44 24 18}
+            $opcode6 = {4C 8B 4C 24 20 4C 8B D1 90 90}
+
+        condition:
+            (uint16(0) == 0x5a4d and filesize < 500KB and all of them)
+```
+
 Now if we open this is ida 
 
 ![1](https://user-images.githubusercontent.com/25670930/236251310-3982a808-5603-4274-967d-74766d4efebe.PNG)
