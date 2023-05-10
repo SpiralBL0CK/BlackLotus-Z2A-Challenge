@@ -398,6 +398,16 @@ So what in the f is this ? well it's basically creating an exception handler for
 
 gets triggered whenever we execute int3 and patch eax to 0 :) so in memory execution looks like this :)
 
+Before patch 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/2b2f8f9a-69b8-4bc8-9a85-539211ff6390)
+
+After patch
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/dde34235-646e-440c-92bc-5085ac335d2b)
+
+
+
 =============================================================================
 
 Anti_debug_measure_2 which i later changed to anti_debug_measure2_RtlAddVectoredExceptionHandler_int2
