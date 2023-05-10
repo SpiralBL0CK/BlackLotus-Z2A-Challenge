@@ -392,4 +392,15 @@ If you search for anti analysis 2dh on google a bunch of stuff will appear so ye
 
 =============================================================================
 
+So now comes anti_debug measure heap which i later renamed iterate_over_current_process_and_check_again_hases
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/6cd89ba6-a1c6-4f31-8da0-f7d7962a6745)
+
+And a cool feature of this function is that this uses ntquerysysteminformation inside iterate_over_current_process_and_hash_check to list all the running processes. This is how iterate_over_current_process_and_hash_check looks like 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/27c5ee3d-fbd7-4c87-8db8-37b606694565)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/4d60c67e-2be7-4a82-a53e-1009629e6ebb)
+
+
 
