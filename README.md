@@ -406,6 +406,10 @@ After patch
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/dde34235-646e-440c-92bc-5085ac335d2b)
 
+After that you exit the function and also edit rax/eax to 0 so you skip the jne to crash debugger
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/4704cf22-e387-4efa-96e1-c15b0eb6bba5)
+
 
 
 =============================================================================
