@@ -72,7 +72,7 @@ Also for aesthetical reasone i will also steal this because it looks cool :) aga
         +------------------------------------------------------+------------------------------------------------------+
 ```
 
-tbh if i were you i wouldn't trust 100% capa because here it say the sample uses rc4 when actually sample uses aes but whatever , as mentioned this is strictly for aesthetics :)
+tbh if i were you i wouldn't trust 100% capa(at least in this specific case) because here it say the sample uses rc4 when actually sample uses aes but whatever , as mentioned this is strictly for aesthetics :)
 
 Before we start you will encounter through this report a lot of  
 
