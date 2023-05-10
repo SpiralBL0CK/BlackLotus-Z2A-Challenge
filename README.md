@@ -372,5 +372,24 @@ And from a pseudo-code perspective it looks like this
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/895a7803-dba0-4d36-8c31-6c82cf8eeeb5)
 
-So what in the f is this ? well it's basically creating an exception handler for __debugbreak(int 3) which will execute code whenever int3 is raised. I ended up searching for more and came around this (https://blog.lexfo.fr/dridex-malware.html) which is a cool resource which let's us know this is simply an anti-debug mechanism, and for our case we just run this function we ignore sub_13F2820D0 which
+So what in the f is this ? well it's basically creating an exception handler for __debugbreak(int 3) which will execute code whenever int3 is raised. I ended up searching for more and came around this 
+
+(https://blog.lexfo.fr/dridex-malware.html) which is a cool resource which let's us know this is simply an anti-debug mechanism, and for our case we just run this function we ignore sub_13F2820D0 which
+
 gets triggered whenever we execute int3 and patch eax to 0 :) so in memory execution looks like this :)
+
+=============================================================================
+
+Anti_debug_measure_2 which i later changed to anti_debug_measure2_RtlAddVectoredExceptionHandler_int2
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/985da43f-a513-4396-be51-3f3a311ca45b)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/dd27ab22-7579-4425-99ee-2940ecf04a0e)
+
+Again nothing new under the sun same thing just hookin other int/syscall this time int2, same trick to bypass use dynamically patching return value to bypass it :)
+
+If you search for anti analysis 2dh on google a bunch of stuff will appear so yeah you can use that as a reference to learn more about that i didn't spend a lot of time with this :)
+
+=============================================================================
+
+
