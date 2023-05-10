@@ -6,6 +6,9 @@ from dumpulator import Dumpulator
 from solve_hash_syscalls import iterate_over_module_name_and_hash
 from solve_hash_syscalls import some_hash_0x1003F
 
+"""
+this needs to be fed the kernel32.dll dumped from memory :) as sys.argv[1]
+"""
 
 def aplib_decompress(base,binar_ntdll, a2, a3):
     """
@@ -551,18 +554,18 @@ def get_ntdll_and_unhook2(x):
 
 if __name__ == "__main__":
     path = get_ntdll_and_unhook2(0xD22E2014)
-    ntdll_base = 0x13f280000 # use this as constant for now it is what it is 
+    kernel_base = 0x13f280000 # use this as constant for now it is what it is 
     binar = open(sys.argv[1],"rb").read()
-    qword_7FF603B1F600 = aplib_decompress(ntdll_base,binar, 0xB08469DD, path)
-    qword_13F2FF5E0 = aplib_decompress(ntdll_base,binar, 0xC8D8F9F4, path)
-    qword_13F2FF5E8 = aplib_decompress(ntdll_base,binar, 0xF6CFC604, path)
-    qword_13F2FF5F0 = aplib_decompress(ntdll_base,binar, 0x572D53D3, path)
-    qword_13F2FF5F8 = aplib_decompress(ntdll_base,binar, 0x10DE9522, path)
-    qword_13F2FF610 = aplib_decompress(ntdll_base,binar, 0xBB26CCEB, path)
-    qword_13F2FF608 = aplib_decompress(ntdll_base,binar, 0x89AB8454, path)
-    qword_13F2FF618 = aplib_decompress(ntdll_base,binar, 0xB2AECB6A, path)
-    qword_13F2FF6C0 = aplib_decompress(ntdll_base,binar, 0xF0238EA7, path)
-    qword_13F2FF740 = aplib_decompress(ntdll_base,binar, 0x839101F2, path)
-    qword_13F2FF750 = aplib_decompress(ntdll_base,binar, 0x319CEA81, path)
-    qword_13F2FF758 = aplib_decompress(ntdll_base,binar, 0xC96D110C, path)
-    result = aplib_decompress(ntdll_base,binar, 0xEF508FE, path)
+    qword_7FF603B1F600 = aplib_decompress(kernel_base,binar, 0xB08469DD, path)
+    qword_13F2FF5E0 = aplib_decompress(kernel_base,binar, 0xC8D8F9F4, path)
+    qword_13F2FF5E8 = aplib_decompress(kernel_base,binar, 0xF6CFC604, path)
+    qword_13F2FF5F0 = aplib_decompress(kernel_base,binar, 0x572D53D3, path)
+    qword_13F2FF5F8 = aplib_decompress(kernel_base,binar, 0x10DE9522, path)
+    qword_13F2FF610 = aplib_decompress(kernel_base,binar, 0xBB26CCEB, path)
+    qword_13F2FF608 = aplib_decompress(kernel_base,binar, 0x89AB8454, path)
+    qword_13F2FF618 = aplib_decompress(kernel_base,binar, 0xB2AECB6A, path)
+    qword_13F2FF6C0 = aplib_decompress(kernel_base,binar, 0xF0238EA7, path)
+    qword_13F2FF740 = aplib_decompress(kernel_base,binar, 0x839101F2, path)
+    qword_13F2FF750 = aplib_decompress(kernel_base,binar, 0x319CEA81, path)
+    qword_13F2FF758 = aplib_decompress(kernel_base,binar, 0xC96D110C, path)
+    result = aplib_decompress(kernel_base,binar, 0xEF508FE, path)
