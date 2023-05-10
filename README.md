@@ -51,7 +51,6 @@ Also for aesthetical reasone i will also steal this because it looks cool :) aga
         |-----------------------------+-------------------------------------------------------------------------------|
         | ANTI-BEHAVIORAL ANALYSIS    | Debugger Detection::Process Environment Block BeingDebugged [B0001.035]       |
         |                             | Debugger Detection::Process Environment Block NtGlobalFlag [B0001.036]        |
-        | COMMUNICATION               | HTTP Communication::Read Header [C0002.014]                                   |
         | CRYPTOGRAPHY                | Encrypt Data::RC4 [C0027.009]                                                 |
         |                             | Generate Pseudo-random Sequence::RC4 PRGA [C0021.004]                         |
         | DATA                        | Encode Data::XOR [C0026.002]                                                  |
@@ -64,7 +63,6 @@ Also for aesthetical reasone i will also steal this because it looks cool :) aga
         | execute syscall instruction (35 matches)             | anti-analysis                                        |
         | check for PEB BeingDebugged flag (2 matches)         | anti-analysis/anti-debugging/debugger-detection      |
         | check for PEB NtGlobalFlag flag                      | anti-analysis/anti-debugging/debugger-detection      |
-        | check HTTP status code (2 matches)                   | communication/http/client                            |
         | encode data using XOR (2 matches)                    | data-manipulation/encoding/xor                       |
         | encrypt data using RC4 PRGA (2 matches)              | data-manipulation/encryption/rc4                     |
         | get process heap flags                               | host-interaction/process                             |
@@ -73,6 +71,8 @@ Also for aesthetical reasone i will also steal this because it looks cool :) aga
         | resolve function by parsing PE exports (2 matches)   | load-code/pe                                         |
         +------------------------------------------------------+------------------------------------------------------+
 ```
+
+tbh if i were you i wouldn't trust 100% capa because here it say the sample uses rc4 when actually sample uses aes but whatever , as mentioned this is strictly for aesthetics :)
 
 Before we start you will encounter through this report a lot of  
 
