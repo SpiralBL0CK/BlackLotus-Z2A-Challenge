@@ -114,6 +114,10 @@ From a static code analysis looks like this
 
 Mhmm a little big nothing to worry here folks it's doable :)
 
+If you use the aplib_decompress.py emulation script you should end up with something like this 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/3f500374-270f-4f79-96b4-69f37bd124fb)
+
 =============================================================================
 
 Going further with the analysis process, on the unexplained functions we have some_hasing and ntquertyinformationprocess_anti_debug, thoese have not been explained. check_if_being_debug_through_teb and anti_debug has already been explained fortunatelly because they were used in the upper function/functions, so please read upper sections if wanna revise the knowledge about them. I would like to start first with ntquertyinformationprocess_anti_debug and afterwards finish with some_hasing.
