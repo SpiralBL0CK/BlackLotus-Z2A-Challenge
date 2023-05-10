@@ -201,7 +201,7 @@ if we look in debugger it looks like this
 
 i was not able to detect what was hooked/patched but if someone knows please do a pull request and edit this document.
 Also in my attempts to find what gets hooked i tried to do bindiff between the two ntdlls and unfortunatelly i found nothing but it might be because i was already doing diff on system dll which was infected so
-not a clean run so maybe that's why
+not a clean run so maybe that's why ¯\_(ツ)_/¯
 
 =============================================================================
 
