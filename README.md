@@ -118,6 +118,16 @@ If you use the aplib_decompress.py emulation script you should end up with somet
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/3f500374-270f-4f79-96b4-69f37bd124fb)
 
+Cool thing i didn't notice on other blogs/analysis was this if we take a look again at ida's graph for aplib_compress function(btw it's not aplib i just called it this dummy name)
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/bb5d80f5-a8d0-448d-b7ed-68c09487080d)
+
+you'll see that i colored some branches from the graph, thoese branches were the branches i ended up hitting and resulted in what i wanted to emulate, Now the interesting part is this 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/e8347513-a2b7-4cf2-afbd-d67484b4e4e2)
+
+because at one point when i was doing the dynamica analysis i noticed another dll being loaded, which was another version of ntdll
+
 =============================================================================
 
 Going further with the analysis process, on the unexplained functions we have some_hasing and ntquertyinformationprocess_anti_debug, thoese have not been explained. check_if_being_debug_through_teb and anti_debug has already been explained fortunatelly because they were used in the upper function/functions, so please read upper sections if wanna revise the knowledge about them. I would like to start first with ntquertyinformationprocess_anti_debug and afterwards finish with some_hasing.
