@@ -124,10 +124,13 @@ Cool thing i didn't notice on other blogs/analysis was this if we take a look ag
 
 you'll see a interesting memcpy
 
-one point when i was doing the dynamica analysis i noticed another dll being loaded, which was another version of ntdll
+at one point when i was doing the dynamica analysis i noticed another dll being loaded, which was another version of ntdll
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/9d700404-1047-49f5-97f2-70232e2c547d)
 
+if we look in debugger it looks like this 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/1e7813bd-e7f5-490a-904c-3ee17792b769)
 
 =============================================================================
 
