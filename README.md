@@ -132,6 +132,8 @@ if we look in debugger it looks like this
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/1e7813bd-e7f5-490a-904c-3ee17792b769)
 
+i was not able to detect what was hooked/patched but if someone knows please do a pull request and edit this document 
+
 =============================================================================
 
 Going further with the analysis process, on the unexplained functions we have some_hasing and ntquertyinformationprocess_anti_debug, thoese have not been explained. check_if_being_debug_through_teb and anti_debug has already been explained fortunatelly because they were used in the upper function/functions, so please read upper sections if wanna revise the knowledge about them. I would like to start first with ntquertyinformationprocess_anti_debug and afterwards finish with some_hasing.
