@@ -29,6 +29,49 @@ rule Blacklotus_HTTP_Downloader
             (uint16(0) == 0x5a4d and filesize < 500KB and all of them)
 ```
 
+Also for aesthetical reasone i will also steal this because it looks cool :) again sorry ryan please don't get mad on me :)
+
+```
+        C:\\Users\\REM\\Desktop>capa.exe -f pe -r capa-rules-5.0.0 d68f668b4240f9518e4f80499d93d8c5a1eddece0771658c33ae916cc54f5a66.exe
+        matching: 100%|████████| 124/124 [00:02<00:00, 46.96 functions/s, skipped 1 library functions (0%)]
+
+        +------------------------+------------------------------------------------------------------------------------+
+        | ATT&CK Tactic          | ATT&CK Technique                                                                   |
+        |------------------------+------------------------------------------------------------------------------------|
+        | DEFENSE EVASION        | Obfuscated Files or Information T1027                                              |
+        | DISCOVERY              | Process Discovery T1057                                                            |
+        | EXECUTION              | Shared Modules T1129                                                               |
+        +------------------------+------------------------------------------------------------------------------------+
+
+        +-----------------------------+-------------------------------------------------------------------------------+
+        | MBC Objective               | MBC Behavior                                                                  |
+        |-----------------------------+-------------------------------------------------------------------------------|
+        | ANTI-BEHAVIORAL ANALYSIS    | Debugger Detection::Process Environment Block BeingDebugged [B0001.035]       |
+        |                             | Debugger Detection::Process Environment Block NtGlobalFlag [B0001.036]        |
+        | COMMUNICATION               | HTTP Communication::Read Header [C0002.014]                                   |
+        | CRYPTOGRAPHY                | Encrypt Data::RC4 [C0027.009]                                                 |
+        |                             | Generate Pseudo-random Sequence::RC4 PRGA [C0021.004]                         |
+        | DATA                        | Encode Data::XOR [C0026.002]                                                  |
+        | DEFENSE EVASION             | Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]      |
+        +-----------------------------+-------------------------------------------------------------------------------+
+
+        +------------------------------------------------------+------------------------------------------------------+
+        | CAPABILITY                                           | NAMESPACE                                            |
+        |------------------------------------------------------+------------------------------------------------------|
+        | execute syscall instruction (35 matches)             | anti-analysis                                        |
+        | check for PEB BeingDebugged flag (2 matches)         | anti-analysis/anti-debugging/debugger-detection      |
+        | check for PEB NtGlobalFlag flag                      | anti-analysis/anti-debugging/debugger-detection      |
+        | check HTTP status code (2 matches)                   | communication/http/client                            |
+        | encode data using XOR (2 matches)                    | data-manipulation/encoding/xor                       |
+        | encrypt data using RC4 PRGA (2 matches)              | data-manipulation/encryption/rc4                     |
+        | get process heap flags                               | host-interaction/process                             |
+        | get ntdll base address (3 matches)                   | linking/runtime-linking                              |
+        | parse PE header (2 matches)                          | load-code/pe                                         |
+        | resolve function by parsing PE exports (2 matches)   | load-code/pe                                         |
+        +------------------------------------------------------+------------------------------------------------------+
+```
+
+
 Now if we open this is ida 
 
 ![1](https://user-images.githubusercontent.com/25670930/236251310-3982a808-5603-4274-967d-74766d4efebe.PNG)
