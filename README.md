@@ -5,7 +5,7 @@ BlackLotus-Z2A-Challenge, Nothing to see here 4 now , please move along
 First things first
 ![Capture23](https://user-images.githubusercontent.com/25670930/234439907-a5ecfec7-16f0-48a3-89b8-97c362a927c2.PNG)
 
-For aesthetic purposes soley, I will shamesly burrow(steal) :)) from ```@darthmaulware(Ryan “DM” Smith)``` solution the yara detection rule just to make it look proffesional. Go check his twitter he's a fking cool person! Ps. Ryan please don't get mad bc i stole that :))) and thx for support in discord :) 
+For aesthetic purposes soley, I will shamesly borrow(steal) :)) from ```@darthmaulware(Ryan “DM” Smith)``` solution the yara detection rules just to make it look proffesional. Go check his twitter he's a fking cool person! Ps. Ryan please don't get mad bc i stole that :))) and thx for support in discord :) 
 
 Please check his work also :) https://gitlab.com/malre-rcs/zero2automated/-/blob/main/solutions/bi_weekly_challenge/BlackLotus_20230321/BlackLotus_HTTP_Downloader.ipynb
 
