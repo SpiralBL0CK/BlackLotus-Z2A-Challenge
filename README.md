@@ -199,7 +199,9 @@ if we look in debugger it looks like this
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/1e7813bd-e7f5-490a-904c-3ee17792b769)
 
-i was not able to detect what was hooked/patched but if someone knows please do a pull request and edit this document 
+i was not able to detect what was hooked/patched but if someone knows please do a pull request and edit this document.
+Also in my attempts to find what gets hooked i tried to do bindiff between the two ntdlls and unfortunatelly i found nothing but it might be because i was already doing diff on system dll which was infected so
+not a clean run so maybe that's why
 
 =============================================================================
 
