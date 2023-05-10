@@ -220,6 +220,9 @@ i was not able to detect what was hooked/patched but if someone knows please do 
 Also in my attempts to find what gets hooked i tried to do bindiff between the two ntdlls and unfortunatelly i found nothing but it might be because i was already doing diff on system dll which was infected so
 not a clean run so maybe that's why ¯\_(ツ)_/¯
 
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/13c55268-1b69-489e-886b-5d54a89898a2)
+
+
 =============================================================================
 
 Going further with the analysis process, on the unexplained functions we have some_hasing and ntquertyinformationprocess_anti_debug, thoese have not been explained. check_if_being_debug_through_teb and anti_debug has already been explained fortunatelly because they were used in the upper function/functions, so please read upper sections if wanna revise the knowledge about them. I would like to start first with ntquertyinformationprocess_anti_debug and afterwards finish with some_hasing.
