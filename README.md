@@ -363,3 +363,14 @@ VMUSrvc.exe
 xenservice.exe
 
 =============================================================================
+
+Anti_debug_measure_1 i ended up renaimg it to anti_debug_measure2_RtlAddVectoredExceptionHandler_int3. Why , you' see in a minute. So it looks like this 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/d40fcb14-5440-411d-ac5e-c82cfd54444e)
+
+And from a pseudo-code perspective it looks like this
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/895a7803-dba0-4d36-8c31-6c82cf8eeeb5)
+
+So what in the f is this ? well it's basically creating an exception handler for __debugbreak(int 3) which will execute code whenever int3 is raised. I ended up searching for more and came around this (https://blog.lexfo.fr/dridex-malware.html) which is a cool resource which let's us know this is simply an anti-debug mechanism, and for our case we just run this function we ignore sub_13F2820D0 which
+gets triggered whenever we execute int3 and patch eax to 0 :) so in memory execution looks like this :)
