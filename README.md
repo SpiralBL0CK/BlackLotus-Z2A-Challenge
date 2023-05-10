@@ -424,6 +424,12 @@ Again nothing new under the sun same thing just hookin other int/syscall this ti
 
 If you search for anti analysis 2dh on google a bunch of stuff will appear so yeah you can use that as a reference to learn more about that i didn't spend a lot of time with this :)
 
+For this one even if you say try to step over it will end up at ret as here
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/b259ffd5-7a65-45ae-8d4b-66ef09764da3)
+
+and to bypass this simply execute till return and you are good :)
+
 =============================================================================
 
 So now comes anti_debug measure heap which i later renamed iterate_over_current_process_and_check_again_hases
