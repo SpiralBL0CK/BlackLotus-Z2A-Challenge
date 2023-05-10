@@ -74,6 +74,20 @@ Also for aesthetical reasone i will also steal this because it looks cool :) aga
         +------------------------------------------------------+------------------------------------------------------+
 ```
 
+Before we start you will encounter through this report a lot of  
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/f97005e4-d526-4596-9b25-f0a76ef32b02)
+
+Please ignore this as ida fails to properly dissasamble this in assembly this is 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/d8b8ebec-baab-4c11-8bfd-a2ce43b38ce4)
+
+And this crashes the debugger ? why ?
+
+because it tries to write at address 0, which in hacker folklor is know as writing at null pointer address which was something exploited widely in order to obtain CE(code execution), and this has been obviously mitigated.
+
+And such with the current mitigation if you try to write at 0 it will crash that process in our case the malware & consequently the debugger.
+
 
 Now if we open this is ida 
 
