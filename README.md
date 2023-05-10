@@ -444,6 +444,9 @@ And a cool feature of this function is that this uses ntquerysysteminformation i
 
 Cool beans but how tf did i came to the conclusion that iterate_over_current_process_and_hash_check does what the name suggest, well first it's the ntquerysysteminformation call , which if you search on google you will see it used to get a list of running processes, and than i simply took and educated guess based on the following code snippet ```LODWORD(v4) = RtlAllocateHeap(NtCurrentPeb()->ProcessHeap, 8u, v10);
     v3 = v4;  v5 = ntquerysysteminformation(); v6 = v3; ....  memcpy(v9, v6[8], *(v6 + 28)); v9[*(v6 + 28) >> 1] = 0; if ( some_hash_0x1003F(v9) == a1 )``` that it would copy the list of processes iterate over each on and compare each hash from the previous array with whatever process was running. Now again kudos to the asian's research blog because idk how tf he came to get the actual name of v4 array values. Please reffer to iterate_over_modules.py in case you wanna see how i emulated this. 
+ 
+Ps. if you debug dynamically this function you will end up hitting int 2d again, and solution is same as mentioned above only that you basically run till return 0xf times, which basically walks the hev and after that if you wanna be sure you hit return from iterate_over_current_process_and_check_again_hases just put a br at the end of this function and you are safe :)
 
+=============================================================================
 
 
