@@ -7,7 +7,9 @@ First things first
 
 For aesthetic purposes soley, I will shamesly borrow(steal) :)) from ```@darthmaulware(Ryan “DM” Smith)``` solution the yara detection rules just to make it look proffesional. Go check his twitter he's a fking cool person! Ps. Ryan please don't get mad bc i stole that :))) and thx for support in discord :) 
 
-Please check his work also :) https://gitlab.com/malre-rcs/zero2automated/-/blob/main/solutions/bi_weekly_challenge/BlackLotus_20230321/BlackLotus_HTTP_Downloader.ipynb
+Please check his work also :) 
+
+https://gitlab.com/malre-rcs/zero2automated/-/blob/main/solutions/bi_weekly_challenge/BlackLotus_20230321/BlackLotus_HTTP_Downloader.ipynb
 
 ```
 rule Blacklotus_HTTP_Downloader
