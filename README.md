@@ -126,6 +126,9 @@ you'll see a interesting memcpy
 
 one point when i was doing the dynamica analysis i noticed another dll being loaded, which was another version of ntdll
 
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/9d700404-1047-49f5-97f2-70232e2c547d)
+
+
 =============================================================================
 
 Going further with the analysis process, on the unexplained functions we have some_hasing and ntquertyinformationprocess_anti_debug, thoese have not been explained. check_if_being_debug_through_teb and anti_debug has already been explained fortunatelly because they were used in the upper function/functions, so please read upper sections if wanna revise the knowledge about them. I would like to start first with ntquertyinformationprocess_anti_debug and afterwards finish with some_hasing.
