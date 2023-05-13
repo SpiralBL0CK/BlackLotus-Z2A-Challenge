@@ -653,5 +653,18 @@ Cool now check_oem_key ()
 
 ![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/aadf41c6-11ce-41dc-b8c2-9f991c31355e)
 
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/3f27d3ed-f7b1-40c7-8871-7bfefb4340a3)
 
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/ef87052d-deaf-4ac7-bc5f-a8ebf64db073)
+
+![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/f19d618e-3f08-43e9-82e8-fff95d6d9a5b)
+
+So wtf this do ? well same trick as previously explainied but this time with acpi table . wtf do i mean here ? well better read this 14 slides(https://dc4420.org/slides/2015-11-24/acpi_vm_detect.pdf) they explain it better, but same cheap trick :)) this time against BOCHS,BXPC,VMWARE
+
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/cc8045f0-6403-4e2b-9954-019c850c935d)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/34517e3a-f24b-4e6d-8499-bd671dac314e)
+
+============================================================================
 
