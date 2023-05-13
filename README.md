@@ -598,3 +598,17 @@ First it demmangles string to
    QEMU
    VBOX
 ```
+
+And than queries    
+   \Registry\Machine\HARDWARE\DEVICEMAP\Scsi\Scsi Port 0\Scsi Bus 0\Target Id 0\Logical Unit Id 0
+   \Registry\Machine\SYSTEM\ControlSet001\Control\SystemInformation
+   \Registry\Machine\HARDWARE\Description\System
+
+and checks their values against qemu,vbox,VMWARE as it can be seen in ida snippet and x86 window :)
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/a2614414-cf03-4dce-844a-4d671a04247c)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/03ed130e-0ea4-461f-9f28-49d474e14f61)
+
+
+
