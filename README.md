@@ -610,5 +610,9 @@ and checks their values against qemu,vbox,VMWARE as it can be seen in ida snippe
 
 ![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/03ed130e-0ea4-461f-9f28-49d474e14f61)
 
+As it can be seen in first snippet it checks vmware against whatever values was stored in my vm at the time at the analysis :)
 
+not big deal just run this function until ret and change eax when retuning to 0 :) to bypass this anti anaylsis method :)
+
+=============================================================================
 
