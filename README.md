@@ -637,7 +637,11 @@ First dumps SMBIOS Firmware Table, than demangles a string for first string bein
 ![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/0c29b179-e1f0-44c7-b672-b67eb4827812)
 
 precisely if ( v4 != v5) i came to the conlsuion that this is a strcmp implementation ish, it will check whatever is in firmware table with demangled string. As it can be seen in the debugger
-![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/87bad67f-ca54-4558-93d2-87eeeabe95e6)
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/87bad67f-ca54-4558-93d2-87eeeabe95e6) r8 is a ptr to firmware table and more interesting we can see that blah blah something ... virtualbox is the name found in the firmware table and than rcx is qemu so we can safely say this a strcmp ish implementation. And surely as it can be seen we safe :) for this check
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/db0ffd93-13b6-4015-9199-6c83b1e7206b)
+
+Now this process repeats for VirtualBox,vbox,VBOX,VMware strings :) Generally solution to bypass this function checking is run it till ret patch eax and continue analysis :)
 
 
 
