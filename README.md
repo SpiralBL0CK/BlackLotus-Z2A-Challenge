@@ -616,3 +616,17 @@ not big deal just run this function until ret and change eax when retuning to 0 
 
 =============================================================================
 
+now get_oem_from_firmware
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/84d67352-f64f-4936-9dc3-16329a869fc5)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/9eebee0c-3b0d-4dd1-a801-b921b71b50ce)
+
+![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/5371da27-a89f-475f-9006-aefb2dfa4b20)
+
+![4](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/d2f97f15-1625-456d-9603-0703d8cf38d2)
+
+![5](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/1e7a272f-9827-4eae-b508-303b5fe7c684)
+
+
+
