@@ -630,4 +630,5 @@ now get_oem_from_firmware
 
 Now something interesting we see that this function starts with sub_13F267288() which has 0x52534D42 passed as parameter. If you search this value on google you will come along a lot of cool questions on different forums eg(https://ru.stackoverflow.com/questions/778618/c-%D0%9A%D0%B0%D0%BA-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D1%8C-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8E-%D0%BE%D0%B1-%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B9%D1%81%D1%82%D0%B2%D0%B0%D1%85-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0-%D0%BD%D0%B5-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8F-wmi) (https://msdn-whiteknight.github.io/answers/html/tools/html/ru.stackoverflow.com/posts/780170.html) (https://www.maldun.com/analysis/YXNkZmRzZmFkc2Y2NDEwNjlkc2Zhc2RmYXNkZg==/) or this(https://github.com/digitalocean/go-smbios/blob/master/smbios/stream_windows.go) but most interesting after reading this and searching for RSMB you may come along this https://evasions.checkpoint.com/techniques/firmware-tables.html which explains us that this is an anti analysis method :) Cool so wtf does this do ?
 
+First dumps SMBIOS Firmware Table, 
 
