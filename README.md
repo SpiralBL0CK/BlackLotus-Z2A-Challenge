@@ -643,6 +643,15 @@ precisely if ( v4 != v5) i came to the conlsuion that this is a strcmp implement
 
 Now this process repeats for VirtualBox,vbox,VBOX,VMware strings :) Generally solution to bypass this function checking is run it till ret patch eax and continue analysis :)
 
+============================================================================
+
+Cool now check_oem_key ()
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/0f303dbc-e8fa-4764-a327-885790bf8211)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/e8d9c74c-1949-4561-9726-6a8852761ec9)
+
+![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/aadf41c6-11ce-41dc-b8c2-9f991c31355e)
 
 
 
