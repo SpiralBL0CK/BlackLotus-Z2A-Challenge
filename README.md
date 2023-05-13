@@ -585,3 +585,16 @@ Now get_oem_key
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/73e717a5-c998-4e77-89ec-0d6d88299940)
 
 ![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/654051fa-afe9-418a-8d10-c0c4f8580d33)
+
+First it demmangles string to
+```
+   \Registry\Machine\HARDWARE\DEVICEMAP\Scsi\Scsi Port 0\Scsi Bus 0\Target Id 0\Logical Unit Id 0
+   \Registry\Machine\SYSTEM\ControlSet001\Control\SystemInformation
+   \Registry\Machine\HARDWARE\Description\System
+   Identifier
+   SystemManufacturer
+   SystemBiosVersion
+   VMWARE
+   QEMU
+   VBOX
+```
