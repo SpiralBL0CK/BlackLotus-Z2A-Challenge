@@ -570,3 +570,15 @@ this basically checks against
   ```
 =============================================================================
 
+Now get_oem_key
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/3846d578-3c02-4d5e-ae90-b3ec68f5b11c)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/d600db39-c7e2-4f2f-82dd-7793aa795e7a)
+
+![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/33da15c1-dd54-4401-ae0a-49afc6e07594)
+
+![4](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/fb77ce5b-4d0e-42da-b3d5-ec24636770bd)
+
+![5](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/51f56d83-b1f2-4e3f-a24c-9af12e6c34a2)
+
