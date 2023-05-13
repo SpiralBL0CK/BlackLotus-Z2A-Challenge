@@ -537,5 +537,36 @@ Cool beans but how tf did i came to the conclusion that iterate_over_current_pro
 Ps. if you debug dynamically this function you will end up hitting int 2d again, and solution is same as mentioned above only that you basically run till return 0xf times, which basically walks the hev and after that if you wanna be sure you hit return from iterate_over_current_process_and_check_again_hases just put a br at the end of this function and you are safe :)
 
 =============================================================================
+anti_debug_measure_heap
 
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/18498120-4d05-49c2-9360-45c164611025)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/70122f89-0382-4ff2-908d-9bc1be891b08)
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/18a0a666-55e1-4d48-8aba-7f3a013062f0)
+
+So yeah we fortunate this is not that big , and what's more we have already implemented demangle_strings. Now i have re-implemented this for bigger arrays please go see anti_debug_measure.py .
+
+this basically checks against 
+
+```
+   \Registry\Machine\SOFTWARE\Microsoft\Virtual Machine\Guest\Parameters 
+   \Registry\Machine\SYSTEM\ControlSet001\Services\vioscsi
+   \Registry\Machine\SYSTEM\ControlSet001\Services\VirtIO-FS Service
+   \Registry\Machine\SYSTEM\ControlSet001\Services\VirtioSerial
+   \Registry\Machine\SYSTEM\ControlSet001\Services\BALLOON
+   \Registry\Machine\SYSTEM\ControlSet001\Services\BalloonService
+   \Registry\Machine\SYSTEM\ControlSet001\Services\netkvm
+   \Registry\Machine\SOFTWARE\VMware, Inc.\VMware Tools
+   \Registry\Machine\HARDWARE\ACPI\DSDT\VBOX__
+   \Registry\Machine\HARDWARE\ACPI\FADT\VBOX__
+   \Registry\Machine\HARDWARE\ACPI\RSDT\VBOX__
+   \Registry\Machine\SOFTWARE\Oracle\VirtualBox Guest Additions
+   \Registry\Machine\SYSTEM\ControlSet001\Services\VBoxGuest
+   \Registry\Machine\SYSTEM\ControlSet001\Services\VBoxMouse
+   \Registry\Machine\SYSTEM\ControlSet001\Services\VBoxService
+   \Registry\Machine\SYSTEM\ControlSet001\Services\VBoxSF
+   \Registry\Machine\SYSTEM\ControlSet001\Services\VBoxVideo
+  ```
+=============================================================================
 
