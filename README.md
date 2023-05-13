@@ -582,3 +582,6 @@ Now get_oem_key
 
 ![5](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/51f56d83-b1f2-4e3f-a24c-9af12e6c34a2)
 
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/73e717a5-c998-4e77-89ec-0d6d88299940)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/654051fa-afe9-418a-8d10-c0c4f8580d33)
