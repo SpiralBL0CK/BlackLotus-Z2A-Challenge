@@ -50,17 +50,23 @@ def sub_13F2857D4(x,y):
         #print(xor_operand)
         r8d =( ecx - 0x60 )
         if(r8d < 0):
-            r8d =( ecx - 0x60 )  & 0xffffffff
-            #print(hex(r8d))
-            r8d = hex(r8d)[2:6]+"0000"
-            r8d = int(r8d,base=16)
+                #print("aicia3")
+                #print(hex(ecx))
+                #print(hex(ecx - 0x60 ))
+                r8d =( ecx - 0x60 )  & 0xffffffff
+                #print(hex(r8d))
+                r8d = hex(r8d)[2:6]+"0000"
+                r8d = int(r8d,base=16)
+                r8d +=(ecx % 0xffff)
+                #r8d = int(r8d,base=16)
+                #print(hex(r8d))
         if(r8d ^ xor_operand == 0):
             #print(eax,int(math.floor((eax*2+8)/4)))
             dword_13FE5FA20[y-v8-1] = hex(xor_operand)
         else:
             if(len(hex(r8d ^ xor_operand)) > 4):
                 dword_13FE5FA20[y-v8-1] = "0x"+hex(r8d ^ xor_operand)[-2:]
-                print(dword_13FE5FA20)
+                #print(dword_13FE5FA20)
                 """
                 current bug
                 din 0xffffffa0 -> paddui manual in ffff0000 e bun pt prim caz da al 2
@@ -68,15 +74,36 @@ def sub_13F2857D4(x,y):
                 """
             else:
                 dword_13FE5FA20[y-v8-1] = hex(r8d ^ xor_operand)
+        
         v8 +=1
-        s = ""
-        for i in range(0,len(dword_13FE5FA20)):
-            if dword_13FE5FA20[i] == None:
-                pass
-            else:
-                s += chr(int(str(dword_13FE5FA20[i]),base=16))
-        #print(s) 
-
+        #dword_13FE5FA20 = dword_13FE5FA20[0:5]
+    s = ""
+    for i in range(0,len(dword_13FE5FA20)):
+        if dword_13FE5FA20[i] == None:
+            pass
+        else:
+            s += chr(int(str(dword_13FE5FA20[i]),base=16))
+    print(len(s))
+    #print(s)
+    lista_caractere = [x for x in s]
+    #print(s) 
+    v12 = 0 
+    if(y != 1):
+        while(v12 < v6):
+            eax = dword_13F2FEA24+v12
+            edx = eax
+            print(eax,edx)
+            r8d = lista_caractere[v12]
+            print(hex(ord(r8d)))
+            
+            eax +=1
+            eax = lista_caractere[eax]
+            lista_caractere[edx] = eax
+            ecx = v12+1
+            lista_caractere[ecx] = r8d
+            #print(dword_13FE5FA20)
+            v12 += 1
+    print("".join([x for x in lista_caractere]))
 
 def main():
     v6 = [None for i in range(0x12)]
