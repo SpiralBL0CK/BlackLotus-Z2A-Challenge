@@ -719,4 +719,15 @@ From a pseudo-code perspective
 
 ![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/4aa344cf-130d-4168-8fbe-ac4d24cfe25c)
 
-So until the if check there's nothing new we already saw this type of algorithm so what about it ? well if you go to the already referenced write-up of the asian research you'll see that it says that it checks to see if version of windows is bigger than win7/server 2008 r2. but how did he came up with this ideea ?
+So until the if check there's nothing new we already saw this type of algorithm so what about it ? well if you go to the already referenced write-up of the asian research you'll see that it says that it checks to see if version of windows is bigger than win7/server 2008 r2. but how did he came up with this ideea ? well if we read http://waleedassar.blogspot.com/2012/08/major-minorsubsystemversion.html he says 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/b159b4d7-b7dc-45e5-83ab-06eecd514ee9)
+
+also if you also read this :)
+
+https://reverseengineering.stackexchange.com/questions/26157/how-to-show-kuser-shared-data-members-in-decompiled-c-code
+
+and apply what it says here that if gets automatically casted to KUSER_SHARED_DATA structure but here my ida was bugged durin the analysis so it is what it is :)
+
+
+
