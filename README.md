@@ -668,3 +668,21 @@ So wtf this do ? well same trick as previously explainied but this time with acp
 
 ============================================================================
 
+I wanna start with anti_debug_processor_Timing() function and than finish with check_for_flags(). So
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/fb8639a1-0ed1-405b-8641-7b9fa65036f3)
+
+This how looks. So wtf does it do ? it reads the current value of the processor’s time-stamp, than takes the name of processor(in our case VBoxVBoxVBox since we run in a vm) than substract the retrived timestamp from name of processor and than simply check if the result is bigger than 19999.
+
+After rdtsc
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/90d2dc33-2d49-4d60-bf8c-c470fe0ad9ea)
+
+after cpuid
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/e462a984-5023-4cca-b034-63d9223c829d)
+
+
+
+
+
