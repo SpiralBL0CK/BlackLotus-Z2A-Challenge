@@ -802,9 +802,25 @@ Assembly perspective
 
 Pseudo-code perspective
 
-![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/cc1003de-cefb-4a6e-baae-06ab90f84a67)
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/6e0c1429-8593-47dc-acc3-3b6ac6fc7549)
 
 We will start the dissection with some_hash() function
 
 ============================================================================
+
+Graph perspective
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/6069c25b-d51e-4af4-810f-5faca56efe14)
+
+Assembly perspective
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/7895f7a3-a39b-4847-a613-3e35f0fed53e)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/43019858-5b4f-4d00-a390-6be697aa117d)
+
+![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/dba653b3-3f24-49c6-85ee-5216bf56a409)
+
+Pseudo-code perspective
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/d05ab573-9822-421b-ae79-327065e7b6d2)
 
