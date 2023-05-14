@@ -672,7 +672,7 @@ I wanna start with anti_debug_processor_Timing() function and than finish with c
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/fb8639a1-0ed1-405b-8641-7b9fa65036f3)
 
-This how looks. So wtf does it do ? it reads the current value of the processor’s time-stamp, than takes the name of processor(in our case VBoxVBoxVBox since we run in a vm) than substract the retrived timestamp from name of processor and than simply check if the result is bigger than 19999.
+This how looks. So wtf does it do ? it reads the current value of the processor’s time-stamp, than takes the name of processor(in our case GenuineIntel) than substract the retrived timestamp from name of processor and than simply check if the result is bigger than 19999.
 
 After rdtsc
 
@@ -682,7 +682,10 @@ after cpuid
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/e462a984-5023-4cca-b034-63d9223c829d)
 
+As it can be seen the string is split in 3 registers 
 
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/4374522e-532f-43c4-896f-88bf37cddc2e)
 
 
 
