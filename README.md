@@ -782,7 +782,7 @@ in order not to bore you with same repetion of roughly ish same algorithm here a
   CoUninitialize 
   CoInitializeSecurity  
   CoSetProxyBlanket  
-  if ( stru_7FFE0000.NtMinorVersion + 0xA * stru_7FFE0000.NtMajorVersion > 61 )// >win7/server 2008 r2
+  if >win7/server 2008 r2
   {
     CreateDecompressor  
     CloseDecompressor 
