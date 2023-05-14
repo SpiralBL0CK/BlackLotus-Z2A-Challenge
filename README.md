@@ -694,3 +694,20 @@ And in our case we see we "fail" this check and set eax to 1
 Solution to this anti-check simply return from function and patch eax to 0 :)
 
 ============================================================================
+
+Now entry_to_peb()
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/8e823240-1537-4e59-9bfb-04b1a722e844)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/bacdf240-a414-4447-9a59-e26c13ceae4d)
+
+![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/e9b2b806-e361-4a16-9a73-47bb32501283)
+
+![4](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/f30e8ae1-b5eb-4b9c-ba09-c6c8ee687100)
+
+![5](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/acfdb4d5-ec62-4f2c-beff-8307b3a4aaaa)
+
+![6](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/f9c17bf1-bc22-4695-94ab-cbda08c50e40)
+
+![7](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/aefdbca1-3d05-4c43-ad4e-adda72f89767)
+
