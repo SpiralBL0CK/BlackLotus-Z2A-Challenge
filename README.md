@@ -790,3 +790,21 @@ in order not to bore you with same repetion of roughly ish same algorithm here a
 } 
 ```
 
+And with that this marks the end of the first half of the blacklotus analysis challenge. 
+
+============================================================================
+
+For the second half
+
+Assembly perspective
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/e3494281-cdf5-4ef9-bfd2-7f1288a981d7)
+
+Pseudo-code perspective
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/cc1003de-cefb-4a6e-baae-06ab90f84a67)
+
+We will start the dissection with entry_to_peb() function
+
+============================================================================
+
