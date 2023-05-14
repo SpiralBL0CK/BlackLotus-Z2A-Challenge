@@ -729,5 +729,64 @@ https://reverseengineering.stackexchange.com/questions/26157/how-to-show-kuser-s
 
 and apply what it says here that if gets automatically casted to KUSER_SHARED_DATA structure but here my ida was bugged durin the analysis so it is what it is :)
 
+in order not to bore you with same repetion of roughly ish same algorithm here are the final function retrived and demangled strings :) this was a grullin process as this was done with a debugger :) i was to lazy to emulate this 
+```
+  user32.dll
+  advapi32.dll
+  Rpcrt4.dll
+  bcrypt.dll
+  ole32.dll
+  Cabinet.dll
 
+  CreateWindowExW   
+  ShutdownBlockReasonCreate  
+  ShutdownBlockReasonDestroy  
+  DestroyWindow 
+  CloseHandle  
+  CreateProcessW 
+  InitializeProcThreadAttributeList   
+  UpdateProcThreadAttribute 
+  LoadAppInitDlls 
+  Sleep   
+  GetExitCodeProcess  
+  MoveFileExW  
+  OpenSCManagerW 
+  OpenServiceW  
+  QueryServiceStatus  
+  StartServiceW  
+  CloseServiceHandle  
+  GetUserNameW  
+  ConvertSidToStringSidW  
+  LookupAccountNameW  
+  CreateWellKnownSid  
+  LookupPrivilegeValueW  
+  ConvertStringSecurityDescriptorToSecurityDescriptorW  
+  RpcStringBindingComposeW  
+  RpcBindingFromStringBindingW  
+  RpcStringFreeW 
+  RpcBindingSetOption  
+  RpcBindingSetAuthInfoExW  
+  RpcBindingFree  
+  NdrClientCall2  
+  NdrClientCall3  
+  BCryptOpenAlgorithmProvider  
+  BCryptSetProperty  
+  BCryptGenerateSymmetricKey  
+  BCryptDecrypt  
+  BCryptDestroyKey  
+  BCryptCloseAlgorithmProvider  
+  BCryptGetProperty 
+  BCryptGenRandom  
+  CoCreateInstance  
+  CoInitializeEx  
+  CoUninitialize 
+  CoInitializeSecurity  
+  CoSetProxyBlanket  
+  if ( stru_7FFE0000.NtMinorVersion + 0xA * stru_7FFE0000.NtMajorVersion > 61 )// >win7/server 2008 r2
+  {
+    CreateDecompressor  
+    CloseDecompressor 
+    Decompress  
+} 
+```
 
