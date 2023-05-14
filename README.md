@@ -687,5 +687,10 @@ As it can be seen the string is split in 3 registers
 
 ![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/4374522e-532f-43c4-896f-88bf37cddc2e)
 
+And in our case we see we "fail" this check and set eax to 1
 
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/b7dc0430-3441-418e-beec-bfa94f53932f)
 
+Solution to this anti-check simply return from function and patch eax to 0 :)
+
+============================================================================
