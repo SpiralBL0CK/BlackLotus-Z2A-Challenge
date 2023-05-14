@@ -718,3 +718,5 @@ From a pseudo-code perspective
 ![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/a74bcd39-7740-4735-bc7c-173fd8b09bf0)
 
 ![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/4aa344cf-130d-4168-8fbe-ac4d24cfe25c)
+
+So until the if check there's nothing new we already saw this type of algorithm so what about it ? well if you go to the already referenced write-up of the asian research you'll see that it says that it checks to see if version of windows is bigger than win7/server 2008 r2. but how did he came up with this ideea ?
