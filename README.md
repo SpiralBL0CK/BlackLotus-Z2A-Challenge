@@ -711,3 +711,10 @@ Now entry_to_peb()
 
 ![7](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/aefdbca1-3d05-4c43-ad4e-adda72f89767)
 
+From a pseudo-code perspective
+
+![1](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/57aae646-64fd-4acd-ba3e-9b69f7ad0432)
+
+![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/a74bcd39-7740-4735-bc7c-173fd8b09bf0)
+
+![3](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/4aa344cf-130d-4168-8fbe-ac4d24cfe25c)
