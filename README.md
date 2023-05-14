@@ -804,7 +804,7 @@ Pseudo-code perspective
 
 ![2](https://github.com/SpiralBL0CK/BlackLotus-Z2A-Challenge/assets/25670930/cc1003de-cefb-4a6e-baae-06ab90f84a67)
 
-We will start the dissection with entry_to_peb() function
+We will start the dissection with some_hash() function
 
 ============================================================================
 
